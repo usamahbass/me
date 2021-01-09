@@ -1,53 +1,74 @@
-import {
-  Avatar,
-  Button,
-  Grid,
-  GridItem,
-  Heading,
-  Text,
-  useMediaQuery,
-} from "@chakra-ui/react";
+import { Box, Button, Divider, Grid, GridItem } from "@chakra-ui/react";
+import { Title, Hero, Card } from "../components";
 import Head from "next/head";
-import Layout from "../layout";
+import Link from "next/link";
 
 export default function Home() {
-  const [md] = useMediaQuery("(max-width: 960px)");
   return (
     <>
       <Head>
         <title>@usamahbass - frontend dev</title>
       </Head>
 
-      <Layout title="UsamahBass">
+      <Hero />
+
+      <Box display="flex" flexDirection="column" justifyContent="center">
+        <Title title="Coretan Terbaru" />
+
         <Grid
-          templateColumns={md ? "1fr" : "20rem 1fr"}
-          templateRows={md ? "14rem 1fr" : null}
-          gap="1rem"
-          position="relative"
-          justifyContent="center"
-          alignItems="center"
-          textAlign={md ? "center" : "left"}
+          gap="1.25rem"
+          templateColumns="repeat(auto-fit, minmax(18rem, 1fr))"
         >
-          <GridItem>
-            <a href="https://github.com/usamahbass">
-              <Avatar
-                width={256}
-                height="auto"
-                src="/bass.jpg"
-                name="Usamah Basalamah"
-              />
-            </a>
-          </GridItem>
-          <GridItem>
-            <Text fontSize="1.3rem" fontWeight="bold" color="blue.500">
-              Ahlan !
-            </Text>
-            <Heading fontSize="clamp(1.25rem,calc(5vw + 1.25rem),3.5rem)" mt={3}>
-              Ane Usamah Basalamah
-            </Heading>
-          </GridItem>
+          {Array.from(new Array(6)).map((el, i) => (
+            <GridItem>
+              <Card />
+            </GridItem>
+          ))}
         </Grid>
-      </Layout>
+
+        <Link href="coretan">
+          <Button
+            color="white"
+            size="md"
+            display="block"
+            margin="50px auto"
+            justifyContent="center"
+            bg="blue.500"
+          >
+            Lihat Selengkapnya
+          </Button>
+        </Link>
+      </Box>
+
+      <Divider mb={10} mt={5} colorScheme="grey.500" />
+
+      <Box display="flex" flexDirection="column" justifyContent="center">
+        <Title title="Proyek Terbaru" />
+
+        <Grid
+          gap="1.25rem"
+          templateColumns="repeat(auto-fit, minmax(18rem, 1fr))"
+        >
+          {Array.from(new Array(6)).map((el, i) => (
+            <GridItem>
+              <Card />
+            </GridItem>
+          ))}
+        </Grid>
+
+        <Link href="coretan">
+          <Button
+            color="white"
+            size="md"
+            display="block"
+            margin="50px auto"
+            justifyContent="center"
+            bg="blue.500"
+          >
+            Lihat Selengkapnya
+          </Button>
+        </Link>
+      </Box>
     </>
   );
 }

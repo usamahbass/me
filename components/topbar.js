@@ -1,14 +1,19 @@
 import {
   Box,
-  Flex,
-  Heading,
   IconButton,
   List,
+  Heading,
   ListItem,
-  Spacer,
+  useMediaQuery,
+  Drawer,
+  useDisclosure,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerBody,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import { Moon, Sun } from "react-feather";
+import { Menu, Moon, Sun } from "react-feather";
+import Link from "next/link";
 import ActiveLink from "./activelink";
 
 const navLink = [
@@ -17,40 +22,89 @@ const navLink = [
     path: "/",
   },
   {
-    name: "Proyek",
-    path: "/proyek",
+    name: "Coretan",
+    path: "/coretan"
   },
   {
     name: "OSS",
     path: "/oss",
   },
+  {
+    name: "Proyek",
+    path: "/proyek",
+  },
+  {
+    name: "Tentang",
+    path: "/tentang",
+  },
 ];
 
 export default function Topbar() {
   const [toggle, setToggle] = useState(false);
+  const [md] = useMediaQuery("(max-width: 960px)");
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Box display="flex" justifyContent="space-between">
       <Box p="2">
-        <h1 className="font-me" size="md">
-          UsamahBass
-        </h1>
+        <Link href="/">
+          <Heading size="md">UsamahBass</Heading>
+        </Link>
       </Box>
 
-      <List display="flex" alignItems="center" gridGap="1rem">
-        {navLink.map((nav, i) => (
-          <ListItem key={i}>
-            <ActiveLink activeClassName="nav-link-active" href={nav.path}>
-              <a className="nav-link">{nav.name}</a>
-            </ActiveLink>
+      {md ? (
+        <Box>
+          <Box onClick={onOpen} className="nav-link" padding="7px">
+            <Menu />
+          </Box>
+
+          <Drawer placement="left" onClose={onClose} isOpen={isOpen}>
+            <DrawerOverlay>
+              <DrawerContent>
+                <DrawerBody>
+                  <List
+                    display="flex"
+                    flexDirection="column"
+                    alignItems="center"
+                    gridGap="1rem"
+                  >
+                    {navLink.map((nav, i) => (
+                      <ListItem key={i}>
+                        <ActiveLink
+                          activeClassName="nav-link-active"
+                          href={nav.path}
+                        >
+                          <a className="nav-link">{nav.name}</a>
+                        </ActiveLink>
+                      </ListItem>
+                    ))}
+                    <ListItem
+                      className="nav-link"
+                      onClick={() => setToggle(!toggle)}
+                    >
+                      {toggle ? <Sun /> : <Moon />}
+                    </ListItem>
+                  </List>
+                </DrawerBody>
+              </DrawerContent>
+            </DrawerOverlay>
+          </Drawer>
+        </Box>
+      ) : (
+        <List display="flex" alignItems="center" gridGap="1rem">
+          {navLink.map((nav, i) => (
+            <ListItem key={i}>
+              <ActiveLink activeClassName="nav-link-active" href={nav.path}>
+                <a className="nav-link">{nav.name}</a>
+              </ActiveLink>
+            </ListItem>
+          ))}
+          <ListItem className="nav-link" onClick={() => setToggle(!toggle)}>
+            {toggle ? <Sun /> : <Moon />}
           </ListItem>
-        ))}
-        <ListItem>
-          <IconButton
-            onClick={() => setToggle(!toggle)}
-            icon={toggle ? <Sun /> : <Moon />}
-          />
-        </ListItem>
-      </List>
+        </List>
+      )}
     </Box>
   );
 }

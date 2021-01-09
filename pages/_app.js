@@ -1,5 +1,6 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import Head from "next/head";
+import Layout from "../layout";
 import theme from "./theme";
 import "../styles/globals.css";
 
@@ -13,13 +14,11 @@ function MyApp({ Component, pageProps }) {
           href="https://fonts.googleapis.com/css2?family=Overpass&display=swap"
           rel="stylesheet"
         />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap"
-          rel="stylesheet"
-        />
       </Head>
 
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </ChakraProvider>
   );
 }

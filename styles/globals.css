@@ -1,4 +1,6 @@
+@import "./components/_zigzagdivider.css";
 @import "./utilities/_helper.css";
+@import "./utilities/_typography.css";
 
 html,
 body {

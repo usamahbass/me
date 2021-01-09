@@ -1,0 +1,20 @@
+.text-title {
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.text-title::before {
+  content: "";
+  position: absolute;
+  bottom: -0.25rem;
+  height: 0.25rem;
+  left: 2rem;
+  right: 2rem;
+  background-color: #3182CE;
+  border-radius: 0.25rem;
+}

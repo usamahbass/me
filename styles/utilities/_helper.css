@@ -2,6 +2,7 @@
   padding: 10px;
   color: #333;
   border-radius: 5px;
+  cursor: pointer;
   background: transparent;
   transition: background 0.1s ease-out;
 }
