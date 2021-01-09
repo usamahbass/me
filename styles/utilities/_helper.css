@@ -1,0 +1,21 @@
+.nav-link {
+  padding: 10px;
+  color: #333;
+  border-radius: 5px;
+  background: transparent;
+  transition: background 0.1s ease-out;
+}
+
+.nav-link:hover {
+  background: #edf2f7;
+}
+
+.nav-link-active {
+  color: #000000;
+}
+
+.font-me {
+  font-family: "Shadows Into Light", cursive;
+  font-weight: bold;
+  font-size: 1rem;
+}
