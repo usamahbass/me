@@ -23,7 +23,7 @@ const navLink = [
   },
   {
     name: "Coretan",
-    path: "/coretan"
+    path: "/coretan",
   },
   {
     name: "OSS",
@@ -49,7 +49,9 @@ export default function Topbar() {
     <Box display="flex" justifyContent="space-between">
       <Box p="2">
         <Link href="/">
-          <Heading size="md">UsamahBass</Heading>
+          <a>
+            <Heading size="md">UsamahBass</Heading>
+          </a>
         </Link>
       </Box>
 

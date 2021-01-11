@@ -1,3 +1,3 @@
 export default function Proyek() {
-  return <div>halo Proyek</div>;
+  return <div>proyek</div>;
 }

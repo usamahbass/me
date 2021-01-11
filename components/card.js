@@ -1,18 +1,20 @@
-import { Box, Badge, Divider, Text, ScaleFade } from "@chakra-ui/react";
+import {
+  Box,
+  Badge,
+  Divider,
+  Text,
+  Image,
+  ScaleFade,
+  Heading,
+  Avatar,
+  Link as LinkChakra,
+} from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { Calendar } from "react-feather";
+import Proptypes from "prop-types";
 
-export default function Card() {
+export const Card = ({ title, date, desc, isNew, isImage, image, alt }) => {
   const [open, setOpen] = useState(false);
-
-  const property = {
-    title: "Modern home in city center in the heart of historic Los Angeles",
-    date: "25 November 2020",
-    desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam in quod
-    deserunt excepturi sit dignissimos impedit consequuntur molestias
-    cupiditate fuga eaque, officia assumenda! Omnis magnam repellat
-    repudiandae ipsa, ratione asperiores?`,
-  };
 
   useEffect(() => {
     setOpen(!open);
@@ -31,12 +33,14 @@ export default function Card() {
             "0 1.5rem 2.5rem rgba(22,28,45,.1),0 .3rem 0.5rem -.50rem rgba(22,28,45,.05) !important",
         }}
       >
+        {isImage ? <Image src={image} alt={alt} /> : null}
         <Box p="6">
           <Box d="flex" alignItems="center">
-            <Badge borderRadius="full" px="2" colorScheme="teal">
-              New
-            </Badge>
-
+            {isNew ? (
+              <Badge borderRadius="full" px="2" colorScheme="teal">
+                Baru
+              </Badge>
+            ) : null}
             <Box
               color="gray.500"
               fontWeight="semibold"
@@ -49,6 +53,8 @@ export default function Card() {
             </Box>
 
             <Box
+              position="relative"
+              top="2px"
               color="gray.500"
               fontWeight="semibold"
               letterSpacing="wide"
@@ -56,7 +62,7 @@ export default function Card() {
               textTransform="uppercase"
               ml="2"
             >
-              {property.date}
+              {date}
             </Box>
           </Box>
 
@@ -72,16 +78,71 @@ export default function Card() {
             }}
             isTruncated
           >
-            {property.title}
+            {title}
           </Box>
 
           <Divider mt="3" />
 
           <Text mt="3" as="p" color="gray.500" isTruncated>
-            {property.desc}
+            {desc}
           </Text>
         </Box>
       </Box>
     </ScaleFade>
   );
-}
+};
+
+export const CardStack = ({ stack }) => {
+  return (
+    <Box
+      padding="15px"
+      borderRadius="5px"
+      display="block"
+      border="1px solid #EDF2F7"
+    >
+      <Heading size="md">Teknologi yang digunakan</Heading>
+      <Divider
+        borderColor="#EDF2F7"
+        opacity="1"
+        borderWidth="2px"
+        mt={3}
+        mb={3}
+      />
+
+      {stack.map((el, i) => (
+        <Box key={i}>
+          <Box display="flex" mt="5" alignItems="center">
+            <Avatar src={el[1]} name="Next JS" mr="2" />
+            <LinkChakra
+              mr="2"
+              fontSize="1.2rem"
+              _hover={{ color: "blue.500" }}
+              size="md"
+            >
+              {el[0]}
+            </LinkChakra>
+          </Box>
+
+          <Divider
+            borderColor="#EDF2F7"
+            opacity="1"
+            borderWidth="2px"
+            mt={3}
+            mb={3}
+          />
+        </Box>
+      ))}
+    </Box>
+  );
+};
+
+Card.propTypes = {
+  title: Proptypes.string.isRequired,
+  desc: Proptypes.string.isRequired,
+  date: Proptypes.string.isRequired,
+  href: Proptypes.string.isRequired,
+  isNew: Proptypes.bool,
+  isImage: Proptypes.bool,
+  image: Proptypes.string,
+  alt: Proptypes.string,
+};

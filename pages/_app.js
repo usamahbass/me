@@ -2,6 +2,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import Head from "next/head";
 import Layout from "../layout";
 import theme from "./theme";
+import "github-markdown-css";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
