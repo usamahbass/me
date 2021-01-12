@@ -25,10 +25,21 @@ export default function IsOSS({ oss }) {
           <Heading>{oss.title}</Heading>
 
           <Box display="flex" mt="3">
-            <Button mr="5" colorScheme="blue" rightIcon={<Code />}>
+            <Button
+              as="a"
+              href={oss.source_code}
+              mr="5"
+              colorScheme="blue"
+              rightIcon={<Code />}
+            >
               Kode Sumber
             </Button>
-            <Button color="grey.500" rightIcon={<Globe />}>
+            <Button
+              as="a"
+              href={oss.demo}
+              color="grey.500"
+              rightIcon={<Globe />}
+            >
               Demo
             </Button>
           </Box>

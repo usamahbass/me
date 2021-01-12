@@ -33,13 +33,13 @@ export default function Hero() {
       </GridItem>
       <GridItem>
         <Text fontSize="1.3rem" fontWeight="bold" color="blue.500">
-          Ahlan !
+          Ahlan &#128075; !
         </Text>
         <Heading fontSize={{ base: "1.70rem", md: "3.5rem" }}>
           Ane Usamah Basalamah .
         </Heading>
 
-        <Heading fontWeight="lighter" fontSize={{ base: "1.5rem", md: "2rem" }}>
+        <Heading position='relative' bottom="5px" fontWeight="lighter" fontSize={{ base: "1.5rem", md: "2rem" }}>
           FrontEndDeveloper ? yes : !no
         </Heading>
 

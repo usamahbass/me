@@ -55,6 +55,8 @@ export default function OSS({ proyek }) {
                     <a>
                       <Card
                         isImage
+                        source_code={el.source_code}
+                        demo={el.demo}
                         image={el.thumbnail}
                         alt={el.title}
                         title={el.title}

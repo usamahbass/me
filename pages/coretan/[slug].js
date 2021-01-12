@@ -1,5 +1,5 @@
-import { Box, Container, Heading, Text } from "@chakra-ui/react";
-import { Calendar } from "react-feather";
+import { Box, Container, Heading, Link, Text } from "@chakra-ui/react";
+import { Calendar, Edit } from "react-feather";
 import { Markdown, Divider } from "../../components";
 
 export default function IsCoretan({ coretan }) {
@@ -8,10 +8,34 @@ export default function IsCoretan({ coretan }) {
       <Box textAlign="center" mb={10}>
         <Heading>{coretan.title}</Heading>
         <Box display="flex" justifyContent="center" alignItems="center" mt={5}>
-          <Calendar style={{ marginRight: 5 }} />
-          <Text position="relative" top="3px">
-            {coretan.date}
-          </Text>
+          <Box
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            mr="5"
+            flexWrap="wrap"
+          >
+            <Calendar style={{ marginRight: 5 }} />
+            <Text position="relative" top="3px">
+              {coretan.date}
+            </Text>
+          </Box>
+
+          <Box
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            flexWrap="wrap"
+          >
+            <Edit style={{ marginRight: 5 }} />
+            <Link
+              href="https://github.com/usamahbass/me/blob/develop/contents/coretan/component-props-react.md"
+              position="relative"
+              top="3px"
+            >
+              Ubah di Github
+            </Link>
+          </Box>
         </Box>
       </Box>
       <Divider mb={10} />

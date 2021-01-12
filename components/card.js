@@ -142,6 +142,7 @@ export const CardStack = ({ stack }) => {
           <Box display="flex" mt="5" alignItems="center">
             <Avatar src={el[1]} name="Next JS" mr="2" />
             <LinkChakra
+              href={el[2]}
               mr="2"
               fontSize="1.2rem"
               _hover={{ color: "blue.500" }}

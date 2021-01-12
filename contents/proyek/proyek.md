@@ -6,8 +6,16 @@ source_code: "https://github.com/usamahbass"
 thumbnail: "https://api.pondokprogrammer.com/img/article/1609228826_4_props.png"
 date: "32 Januari 2020"
 tech:
-  - ["NextJS", "https://nextjs.org"]
-  - ["ChakraUI", "https://chakraui.com"]
+  - [
+      "NextJS",
+      "https://avatars1.githubusercontent.com/u/14985020?s=200&v=4",
+      "https://nextjs.org",
+    ]
+  - [
+      "ChakraUI",
+      "https://avatars3.githubusercontent.com/u/54212428?s=280&v=4",
+      "https://chakraui.com",
+    ]
 ---
 
 Pellentesque condimentum velit vel justo rutrum, sit amet commodo diam tincidunt. Nunc diam massa, interdum ut aliquet at, scelerisque ac ex. Integer cursus sem ac pretium posuere. Ut at odio nulla. Phasellus nec ante luctus, egestas dui id, maximus dui. In aliquam elit sit amet sollicitudin luctus. Nunc nec leo quis ante vestibulum egestas. In dignissim libero vitae congue bibendum. Sed iaculis eros a leo pellentesque, et ultrices leo malesuada. Nullam ultrices rutrum accumsan. Pellentesque tempus sapien et vestibulum placerat.

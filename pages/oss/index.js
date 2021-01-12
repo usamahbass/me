@@ -55,6 +55,8 @@ export default function OSS({ oss }) {
                     <a>
                       <Card
                         isImage
+                        source_code={el.source_code}
+                        demo={el.demo}
                         image={el.thumbnail}
                         alt={el.title}
                         title={el.title}
@@ -77,10 +79,7 @@ export async function getStaticProps() {
 
   const { v4: uuid } = require("uuid");
 
-  const filesOSS = fs.readdirSync(
-    `${process.cwd()}/contents/oss`,
-    "utf-8"
-  );
+  const filesOSS = fs.readdirSync(`${process.cwd()}/contents/oss`, "utf-8");
 
   const oss = filesOSS
     .filter((fn) => fn.endsWith(".md"))
