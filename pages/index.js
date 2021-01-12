@@ -76,6 +76,8 @@ export default function Home({ coretan, proyek, oss }) {
                       <Card
                         isNew
                         isImage
+                        source_code={el.source_code}
+                        demo={el.demo}
                         image={el.thumbnail}
                         alt={el.title}
                         title={el.title}
@@ -126,6 +128,8 @@ export default function Home({ coretan, proyek, oss }) {
                       <Card
                         isNew
                         isImage
+                        source_code={el.source_code}
+                        demo={el.demo}
                         image={el.thumbnail}
                         alt={el.title}
                         title={el.title}

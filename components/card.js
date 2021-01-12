@@ -8,12 +8,23 @@ import {
   Heading,
   Avatar,
   Link as LinkChakra,
+  Button,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { Calendar } from "react-feather";
+import { Calendar, Code, Globe } from "react-feather";
 import Proptypes from "prop-types";
 
-export const Card = ({ title, date, desc, isNew, isImage, image, alt }) => {
+export const Card = ({
+  title,
+  date,
+  desc,
+  isNew,
+  isImage,
+  image,
+  alt,
+  source_code,
+  demo,
+}) => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -86,6 +97,23 @@ export const Card = ({ title, date, desc, isNew, isImage, image, alt }) => {
           <Text mt="3" as="p" color="gray.500" isTruncated>
             {desc}
           </Text>
+
+          {isImage ? (
+            <Box mt="5">
+              <Button
+                as="a"
+                href={source_code}
+                mr="5"
+                colorScheme="blue"
+                rightIcon={<Code />}
+              >
+                Kode Sumber
+              </Button>
+              <Button as="a" href={demo} color="grey.500" rightIcon={<Globe />}>
+                Demo
+              </Button>
+            </Box>
+          ) : null}
         </Box>
       </Box>
     </ScaleFade>
@@ -140,9 +168,10 @@ Card.propTypes = {
   title: Proptypes.string.isRequired,
   desc: Proptypes.string.isRequired,
   date: Proptypes.string.isRequired,
-  href: Proptypes.string.isRequired,
   isNew: Proptypes.bool,
   isImage: Proptypes.bool,
   image: Proptypes.string,
   alt: Proptypes.string,
+  source_code: Proptypes.string,
+  demo: Proptypes.string,
 };

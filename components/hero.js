@@ -3,6 +3,7 @@ import {
   Grid,
   GridItem,
   Heading,
+  Link,
   Text,
   useMediaQuery,
 } from "@chakra-ui/react";
@@ -39,14 +40,50 @@ export default function Hero() {
         </Heading>
 
         <Heading fontWeight="lighter" fontSize={{ base: "1.5rem", md: "2rem" }}>
-          FrontEnd Developer ? 'yes' : '!no'
+          FrontEndDeveloper ? yes : !no
         </Heading>
 
         <Text fontSize={{ base: "1rem", md: "1.125rem" }} color="gray.500">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam in quod
-          deserunt excepturi sit dignissimos impedit consequuntur molestias
-          cupiditate fuga eaque, officia assumenda! Omnis magnam repellat
-          repudiandae ipsa, ratione asperiores?
+          Bikin
+          <Link
+            ml={1}
+            mr={1}
+            href="https://raksyedev.netlify.app/"
+            _hover={{ color: "blue.500" }}
+          >
+            RaksyeDev .
+          </Link>
+        </Text>
+
+        <Text fontSize={{ base: "1rem", md: "1.125rem" }} color="gray.500">
+          Kadang suka
+          <Link
+            ml={1}
+            mr={1}
+            href="https://reactjs.org/"
+            _hover={{ color: "blue.500" }}
+          >
+            React
+          </Link>
+          , kadang juga
+          <Link
+            ml={1}
+            mr={1}
+            href="https://svelte.dev/"
+            _hover={{ color: "blue.500" }}
+          >
+            Svelte
+          </Link>
+          tapi buat ini pake
+          <Link
+            ml={1}
+            mr={1}
+            href="https://nextjs.org/"
+            _hover={{ color: "blue.500" }}
+          >
+            Next
+          </Link>
+          .
         </Text>
       </GridItem>
     </Grid>

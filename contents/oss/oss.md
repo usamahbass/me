@@ -2,7 +2,7 @@
 title: My first oss
 slug: oss
 demo: "https://github.com/usamahbass/me"
-source-code: "https://github.com/usamahbass"
+source_code: "https://github.com/usamahbass"
 thumbnail: "https://api.pondokprogrammer.com/img/article/1609228826_4_props.png"
 date: "32 Januari 2020"
 tech:
