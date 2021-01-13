@@ -1,48 +1,75 @@
+import { useContext } from "react";
 import { Box, Container, Heading, Link, Text } from "@chakra-ui/react";
 import { Calendar, Edit } from "react-feather";
+import { NextSeo } from "next-seo";
+import { IsContext } from "../../context";
 import { Markdown, Divider, Shared } from "../../components";
 
 export default function IsCoretan({ coretan }) {
-  return (
-    <Container maxW="3xl">
-      <Box textAlign="center" mb={10}>
-        <Heading>{coretan.title}</Heading>
-        <Box display="flex" justifyContent="center" alignItems="center" mt={5}>
-          <Box
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            mr="5"
-            flexWrap="wrap"
-          >
-            <Calendar style={{ marginRight: 5 }} />
-            <Text position="relative" top="3px">
-              {coretan.date}
-            </Text>
-          </Box>
+  const [path] = useContext(IsContext);
 
+  return (
+    <>
+      <NextSeo
+        title={`${coretan.title} - @usamahbass`}
+        description={coretan.spoiler}
+        type="blog"
+        openGraph={{
+          type: "blog",
+          url: `https://usamahbass.vercel.app${path}`,
+          title: coretan.title,
+          description: coretan.spoiler,
+          images: [
+            {
+              url: coretan.thumbnail,
+            },
+          ],
+        }}
+      />
+      <Container maxW="3xl">
+        <Box textAlign="center" mb={10}>
+          <Heading>{coretan.title}</Heading>
           <Box
             display="flex"
             justifyContent="center"
             alignItems="center"
-            flexWrap="wrap"
+            mt={5}
           >
-            <Edit style={{ marginRight: 5 }} />
-            <Link
-              href="https://github.com/usamahbass/me/blob/develop/contents/coretan/component-props-react.md"
-              position="relative"
-              top="3px"
+            <Box
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+              mr="5"
+              flexWrap="wrap"
             >
-              Ubah di Github
-            </Link>
+              <Calendar style={{ marginRight: 5 }} />
+              <Text position="relative" top="3px">
+                {coretan.date}
+              </Text>
+            </Box>
+
+            <Box
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+              flexWrap="wrap"
+            >
+              <Edit style={{ marginRight: 5 }} />
+              <Link
+                href="https://github.com/usamahbass/me/blob/develop/contents/coretan/component-props-react.md"
+                position="relative"
+                top="3px"
+              >
+                Ubah di Github
+              </Link>
+            </Box>
           </Box>
         </Box>
-      </Box>
-      <Divider mb={10} />
-      <Markdown source={coretan.content} />
-
-      <Shared />
-    </Container>
+        <Divider mb={10} />
+        <Markdown source={coretan.content} />
+        <Shared />
+      </Container>
+    </>
   );
 }
 

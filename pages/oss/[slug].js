@@ -1,61 +1,79 @@
+import { useContext } from "react";
 import { Box, Button, Divider, Heading, Image } from "@chakra-ui/react";
-import { useEffect } from "react";
+import { NextSeo } from "next-seo";
 import { Code, Globe } from "react-feather";
 import { CardStack, Markdown } from "../../components";
+import { IsContext } from "../../context";
 import { OssContainer } from "../../containers";
 
 export default function IsOSS({ oss }) {
-  useEffect(() => {
-    console.log("oss", oss);
-  }, [oss]);
+  const [path] = useContext(IsContext);
   return (
-    <OssContainer
-      photo={
-        <Image
-          display="block"
-          width="100%"
-          height="100%"
-          src={oss.thumbnail}
-          alt={oss.title}
-        />
-      }
-      stack={<CardStack stack={oss.tech} />}
-      content={
-        <Box display="block" mt="3">
-          <Heading>{oss.title}</Heading>
-
-          <Box display="flex" mt="3">
-            <Button
-              as="a"
-              href={oss.source_code}
-              mr="5"
-              colorScheme="blue"
-              rightIcon={<Code />}
-            >
-              Kode Sumber
-            </Button>
-            <Button
-              as="a"
-              href={oss.demo}
-              color="grey.500"
-              rightIcon={<Globe />}
-            >
-              Demo
-            </Button>
-          </Box>
-
-          <Divider
-            mt={10}
-            mb={10}
-            borderColor="#EDF2F7"
-            opacity="1"
-            borderWidth="2px"
+    <>
+      <NextSeo
+        title={`${oss.title} - @usamahbass`}
+        description={oss.spoiler}
+        type="blog"
+        openGraph={{
+          type: "blog",
+          url: `https://usamahbass.vercel.app${path}`,
+          title: oss.title,
+          description: oss.spoiler,
+          images: [
+            {
+              url: oss.thumbnail,
+            },
+          ],
+        }}
+      />
+      <OssContainer
+        photo={
+          <Image
+            display="block"
+            width="100%"
+            height="100%"
+            src={oss.thumbnail}
+            alt={oss.title}
           />
+        }
+        stack={<CardStack stack={oss.tech} />}
+        content={
+          <Box display="block" mt="3">
+            <Heading>{oss.title}</Heading>
 
-          <Markdown source={oss.content} />
-        </Box>
-      }
-    />
+            <Box display="flex" mt="3">
+              <Button
+                as="a"
+                href={oss.source_code}
+                mr="5"
+                colorScheme="blue"
+                rightIcon={<Code />}
+              >
+                Kode Sumber
+              </Button>
+              <Button
+                as="a"
+                href={oss.demo}
+                color="grey.500"
+                rightIcon={<Globe />}
+              >
+                Demo
+              </Button>
+            </Box>
+
+            <Divider
+              mt={10}
+              mb={10}
+              borderColor="#EDF2F7"
+              opacity="1"
+              borderWidth="2px"
+            />
+
+            <Markdown source={oss.content} />
+          </Box>
+        }
+      />
+    </>
   );
 }
 

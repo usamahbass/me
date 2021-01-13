@@ -1,57 +1,79 @@
+import { useContext } from "react";
 import { Box, Button, Divider, Heading, Image } from "@chakra-ui/react";
 import { Code, Globe } from "react-feather";
+import { NextSeo } from "next-seo";
 import { CardStack, Markdown } from "../../components";
+import { IsContext } from "../../context";
 import { OssContainer } from "../../containers";
 
 export default function IsProyek({ proyek }) {
+  const [path] = useContext(IsContext);
   return (
-    <OssContainer
-      photo={
-        <Image
-          display="block"
-          width="100%"
-          height="100%"
-          src={proyek.thumbnail}
-          alt={proyek.title}
-        />
-      }
-      stack={<CardStack stack={proyek.tech} />}
-      content={
-        <Box display="block" mt="3">
-          <Heading>{proyek.title}</Heading>
-
-          <Box display="flex" mt="3">
-            <Button
-              as="a"
-              href={proyek.source_code}
-              mr="5"
-              colorScheme="blue"
-              rightIcon={<Code />}
-            >
-              Kode Sumber
-            </Button>
-            <Button
-              as="a"
-              href={proyek.demo}
-              color="grey.500"
-              rightIcon={<Globe />}
-            >
-              Demo
-            </Button>
-          </Box>
-
-          <Divider
-            mt={10}
-            mb={10}
-            borderColor="#EDF2F7"
-            opacity="1"
-            borderWidth="2px"
+    <>
+      <NextSeo
+        title={`${proyek.title} - @usamahbass`}
+        description={proyek.spoiler}
+        type="blog"
+        openGraph={{
+          type: "blog",
+          url: `https://usamahbass.vercel.app${path}`,
+          title: proyek.title,
+          description: proyek.spoiler,
+          images: [
+            {
+              url: proyek.thumbnail,
+            },
+          ],
+        }}
+      />
+      <OssContainer
+        photo={
+          <Image
+            display="block"
+            width="100%"
+            height="100%"
+            src={proyek.thumbnail}
+            alt={proyek.title}
           />
+        }
+        stack={<CardStack stack={proyek.tech} />}
+        content={
+          <Box display="block" mt="3">
+            <Heading>{proyek.title}</Heading>
 
-          <Markdown source={proyek.content} />
-        </Box>
-      }
-    />
+            <Box display="flex" mt="3">
+              <Button
+                as="a"
+                href={proyek.source_code}
+                mr="5"
+                colorScheme="blue"
+                rightIcon={<Code />}
+              >
+                Kode Sumber
+              </Button>
+              <Button
+                as="a"
+                href={proyek.demo}
+                color="grey.500"
+                rightIcon={<Globe />}
+              >
+                Demo
+              </Button>
+            </Box>
+
+            <Divider
+              mt={10}
+              mb={10}
+              borderColor="#EDF2F7"
+              opacity="1"
+              borderWidth="2px"
+            />
+
+            <Markdown source={proyek.content} />
+          </Box>
+        }
+      />
+    </>
   );
 }
 

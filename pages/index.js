@@ -1,14 +1,13 @@
 import { Box, Button, Grid, GridItem } from "@chakra-ui/react";
+import { NextSeo } from "next-seo";
 import { Title, Hero, Card, Divider } from "../components";
-import Head from "next/head";
+import { DefaultSEO } from "../next-seo.config";
 import Link from "next/link";
 
 export default function Home({ coretan, proyek, oss }) {
   return (
     <>
-      <Head>
-        <title>@usamahbass - frontend dev</title>
-      </Head>
+      <NextSeo {...DefaultSEO} />
 
       <Hero />
 
@@ -36,7 +35,7 @@ export default function Home({ coretan, proyek, oss }) {
                   </Link>
                 </GridItem>
               ))
-            : "loading.."}
+            : "memuat data.."}
         </Grid>
 
         <Link href="/coretan">
@@ -88,7 +87,7 @@ export default function Home({ coretan, proyek, oss }) {
                   </Link>
                 </GridItem>
               ))
-            : "loading.."}
+            : "memuat data.."}
         </Grid>
 
         <Link href="/proyek">
@@ -140,7 +139,7 @@ export default function Home({ coretan, proyek, oss }) {
                   </Link>
                 </GridItem>
               ))
-            : "loading.."}
+            : "memuat data.."}
         </Grid>
 
         <Link href="/oss">

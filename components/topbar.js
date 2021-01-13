@@ -10,6 +10,7 @@ import {
   DrawerOverlay,
   DrawerContent,
   DrawerBody,
+  Tooltip,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { Menu, Moon, Sun } from "react-feather";
@@ -34,8 +35,8 @@ const navLink = [
     path: "/proyek",
   },
   {
-    name: "Tentang",
-    path: "/tentang",
+    name: "Tentang Ane",
+    path: "/tentang-ane",
   },
 ];
 
@@ -102,9 +103,14 @@ export default function Topbar() {
               </ActiveLink>
             </ListItem>
           ))}
-          <ListItem className="nav-link" onClick={() => setToggle(!toggle)}>
-            {toggle ? <Sun /> : <Moon />}
-          </ListItem>
+          <Tooltip
+            label={toggle ? "Terangin" : "Gelapin"}
+            aria-label={toggle ? "Terangin" : "Gelapin"}
+          >
+            <ListItem className="nav-link" onClick={() => setToggle(!toggle)}>
+              {toggle ? <Sun /> : <Moon />}
+            </ListItem>
+          </Tooltip>
         </List>
       )}
     </Box>
