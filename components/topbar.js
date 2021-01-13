@@ -1,6 +1,5 @@
 import {
   Box,
-  IconButton,
   List,
   Heading,
   ListItem,
@@ -11,6 +10,7 @@ import {
   DrawerContent,
   DrawerBody,
   Tooltip,
+  useColorMode,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { Menu, Moon, Sun } from "react-feather";
@@ -45,6 +45,12 @@ export default function Topbar() {
   const [md] = useMediaQuery("(max-width: 960px)");
 
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { colorMode, toggleColorMode } = useColorMode();
+
+  function handleTheme() {
+    setToggle(!toggle);
+    toggleColorMode();
+  }
 
   return (
     <Box display="flex" justifyContent="space-between">
@@ -59,7 +65,11 @@ export default function Topbar() {
       {md ? (
         <Box>
           <Box onClick={onOpen} className="nav-link" padding="7px">
-            <Menu />
+            <Menu
+              style={{
+                color: colorMode === "dark" ? "#718096" : null,
+              }}
+            />
           </Box>
 
           <Drawer placement="left" onClose={onClose} isOpen={isOpen}>
@@ -78,16 +88,31 @@ export default function Topbar() {
                           activeClassName="nav-link-active"
                           href={nav.path}
                         >
-                          <a className="nav-link">{nav.name}</a>
+                          <a
+                            className="nav-link"
+                            style={{
+                              color: colorMode === "dark" ? "#718096" : null,
+                            }}
+                          >
+                            {nav.name}
+                          </a>
                         </ActiveLink>
                       </ListItem>
                     ))}
-                    <ListItem
-                      className="nav-link"
-                      onClick={() => setToggle(!toggle)}
+                    <Tooltip
+                      label={toggle ? "Terangin" : "Gelapin"}
+                      aria-label={toggle ? "Terangin" : "Gelapin"}
                     >
-                      {toggle ? <Sun /> : <Moon />}
-                    </ListItem>
+                      <ListItem
+                        className="nav-link"
+                        onClick={handleTheme}
+                        style={{
+                          color: colorMode === "dark" ? "#718096" : null,
+                        }}
+                      >
+                        {toggle ? <Sun /> : <Moon />}
+                      </ListItem>
+                    </Tooltip>
                   </List>
                 </DrawerBody>
               </DrawerContent>
@@ -99,7 +124,14 @@ export default function Topbar() {
           {navLink.map((nav, i) => (
             <ListItem key={i}>
               <ActiveLink activeClassName="nav-link-active" href={nav.path}>
-                <a className="nav-link">{nav.name}</a>
+                <a
+                  className="nav-link"
+                  style={{
+                    color: colorMode === "dark" ? "#718096" : null,
+                  }}
+                >
+                  {nav.name}
+                </a>
               </ActiveLink>
             </ListItem>
           ))}
@@ -107,7 +139,13 @@ export default function Topbar() {
             label={toggle ? "Terangin" : "Gelapin"}
             aria-label={toggle ? "Terangin" : "Gelapin"}
           >
-            <ListItem className="nav-link" onClick={() => setToggle(!toggle)}>
+            <ListItem
+              className="nav-link"
+              onClick={handleTheme}
+              style={{
+                color: colorMode === "dark" ? "#718096" : null,
+              }}
+            >
               {toggle ? <Sun /> : <Moon />}
             </ListItem>
           </Tooltip>

@@ -1,10 +1,14 @@
+import { Box, useColorMode } from "@chakra-ui/react";
 import Proptypes from "prop-types";
 
 export default function Markdown({ source }) {
+  const { colorMode } = useColorMode();
   return (
-    <article
+    <Box
+      as="article"
       className="markdown-body"
-      style={{ marginBottom: 50 }}
+      marginBottom="50px"
+      style={{ color: colorMode === "dark" ? "#fff" : null }}
       dangerouslySetInnerHTML={{ __html: source }}
     />
   );
