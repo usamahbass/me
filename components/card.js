@@ -104,6 +104,7 @@ export const Card = ({
                 as="a"
                 href={source_code}
                 mr="5"
+                mb="3"
                 colorScheme="blue"
                 rightIcon={<Code />}
               >

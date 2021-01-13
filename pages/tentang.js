@@ -222,7 +222,7 @@ export default function Tentang() {
         >
           Figma
         </Link>
-        ( kadang ya kalo ga lagi semangat buat designnya &#9786;).
+        ( kadang ya kalo lagi semangat buat designnya &#9786;).
       </Heading>
     </Box>
   );

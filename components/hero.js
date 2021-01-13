@@ -39,10 +39,6 @@ export default function Hero() {
           Ane Usamah Basalamah .
         </Heading>
 
-        <Heading position='relative' bottom="5px" fontWeight="lighter" fontSize={{ base: "1.5rem", md: "2rem" }}>
-          FrontEndDeveloper ? yes : !no
-        </Heading>
-
         <Text fontSize={{ base: "1rem", md: "1.125rem" }} color="gray.500">
           Bikin
           <Link
@@ -70,7 +66,7 @@ export default function Hero() {
             ml={1}
             mr={1}
             href="https://svelte.dev/"
-            _hover={{ color: "blue.500" }}
+            _hover={{ color: "#FF3E00" }}
           >
             Svelte
           </Link>
@@ -79,7 +75,7 @@ export default function Hero() {
             ml={1}
             mr={1}
             href="https://nextjs.org/"
-            _hover={{ color: "blue.500" }}
+            _hover={{ color: "#000" }}
           >
             Next
           </Link>

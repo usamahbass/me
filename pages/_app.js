@@ -1,5 +1,6 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import Head from "next/head";
+import { Backtop } from "../components";
 import Layout from "../layout";
 import theme from "./theme";
 import "github-markdown-css";
@@ -19,6 +20,7 @@ function MyApp({ Component, pageProps }) {
 
       <Layout>
         <Component {...pageProps} />
+        <Backtop />
       </Layout>
     </ChakraProvider>
   );

@@ -23,7 +23,7 @@ const social = [
 export default function Footer() {
   return (
     <Box textAlign="center">
-      <Box display="flex" justifyContent="center">
+      <Box marginLeft="50px" display="flex" justifyContent="center">
         {social.map((el, i) => (
           <Link
             _hover={{ opacity: 0.9, color: "blue.500" }}
@@ -42,7 +42,7 @@ export default function Footer() {
             href="https://nextjs.org"
             ml={1}
             mr={1}
-            _hover={{ color: "blue.500" }}
+            _hover={{ color: "#000" }}
           >
             NextJS
           </Link>
@@ -51,7 +51,7 @@ export default function Footer() {
             ml={1}
             mr={1}
             href="https://chakra-ui.com/"
-            _hover={{ color: "blue.500" }}
+            _hover={{ color: "#38B2AC" }}
           >
             ChakraUI
           </Link>
@@ -59,7 +59,7 @@ export default function Footer() {
           <Link
             ml={1}
             href="https://github.com/usamahbass/me"
-            _hover={{ color: "blue.500" }}
+            _hover={{ color: "#000" }}
           >
             Github
           </Link>

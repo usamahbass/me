@@ -1,6 +1,6 @@
 import { Box, Container, Heading, Link, Text } from "@chakra-ui/react";
 import { Calendar, Edit } from "react-feather";
-import { Markdown, Divider } from "../../components";
+import { Markdown, Divider, Shared } from "../../components";
 
 export default function IsCoretan({ coretan }) {
   return (
@@ -40,6 +40,8 @@ export default function IsCoretan({ coretan }) {
       </Box>
       <Divider mb={10} />
       <Markdown source={coretan.content} />
+
+      <Shared />
     </Container>
   );
 }
