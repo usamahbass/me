@@ -31,7 +31,7 @@ export default function IsOSS({ oss }) {
           <Image
             display="block"
             width="100%"
-            height="100%"
+            height="406px"
             src={oss.thumbnail}
             alt={oss.title}
           />
@@ -42,23 +42,27 @@ export default function IsOSS({ oss }) {
             <Heading>{oss.title}</Heading>
 
             <Box display="flex" mt="3">
-              <Button
-                as="a"
-                href={oss.source_code}
-                mr="5"
-                colorScheme="blue"
-                rightIcon={<Code />}
-              >
-                Kode Sumber
-              </Button>
-              <Button
-                as="a"
-                href={oss.demo}
-                color="grey.500"
-                rightIcon={<Globe />}
-              >
-                Demo
-              </Button>
+              {oss.source_code == null ? null : (
+                <Button
+                  as="a"
+                  href={oss.source_code}
+                  mr="5"
+                  colorScheme="blue"
+                  rightIcon={<Code />}
+                >
+                  Kode Sumber
+                </Button>
+              )}
+              {oss.demo == null ? null : (
+                <Button
+                  as="a"
+                  href={oss.demo}
+                  color="grey.500"
+                  rightIcon={<Globe />}
+                >
+                  Demo
+                </Button>
+              )}
             </Box>
 
             <Divider

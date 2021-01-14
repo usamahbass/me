@@ -44,7 +44,7 @@ export const Card = ({
             "0 1.5rem 2.5rem rgba(22,28,45,.1),0 .3rem 0.5rem -.50rem rgba(22,28,45,.05) !important",
         }}
       >
-        {isImage ? <Image src={image} alt={alt} /> : null}
+        {isImage ? <Image width="100%" height="206px" src={image} alt={alt} /> : null}
         <Box p="6">
           <Box d="flex" alignItems="center">
             {isNew ? (
@@ -100,19 +100,28 @@ export const Card = ({
 
           {isImage ? (
             <Box mt="5">
-              <Button
-                as="a"
-                href={source_code}
-                mr="5"
-                mb={["3", "0"]}
-                colorScheme="blue"
-                rightIcon={<Code />}
-              >
-                Kode Sumber
-              </Button>
-              <Button as="a" href={demo} color="grey.500" rightIcon={<Globe />}>
-                Demo
-              </Button>
+              {source_code == null ? null : (
+                <Button
+                  as="a"
+                  href={source_code}
+                  mr="5"
+                  mb={["3", "0"]}
+                  colorScheme="blue"
+                  rightIcon={<Code />}
+                >
+                  Kode
+                </Button>
+              )}
+              {demo == null ? null : (
+                <Button
+                  as="a"
+                  href={demo}
+                  color="grey.500"
+                  rightIcon={<Globe />}
+                >
+                  Demo
+                </Button>
+              )}
             </Box>
           ) : null}
         </Box>
@@ -141,7 +150,12 @@ export const CardStack = ({ stack }) => {
       {stack.map((el, i) => (
         <Box key={i}>
           <Box display="flex" mt="5" alignItems="center">
-            <Avatar src={el[1]} name="Next JS" mr="2" />
+            <Avatar
+              bg={!el ? null : "none"}
+              src={el[1]}
+              name={el[0]}
+              mr="2"
+            />
             <LinkChakra
               href={el[2]}
               mr="2"

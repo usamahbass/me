@@ -63,7 +63,7 @@ export default function Coretan({ coretan }) {
                   <GridItem key={i}>
                     <Link href={`/coretan/${el.slug}`}>
                       <a>
-                        <Card title={el.title} date={el.date} desc={el.slug} />
+                        <Card title={el.title} date={el.date} desc={el.spoiler} />
                       </a>
                     </Link>
                   </GridItem>

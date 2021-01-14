@@ -31,7 +31,7 @@ export default function IsProyek({ proyek }) {
           <Image
             display="block"
             width="100%"
-            height="100%"
+            height="406px"
             src={proyek.thumbnail}
             alt={proyek.title}
           />
@@ -42,23 +42,27 @@ export default function IsProyek({ proyek }) {
             <Heading>{proyek.title}</Heading>
 
             <Box display="flex" mt="3">
-              <Button
-                as="a"
-                href={proyek.source_code}
-                mr="5"
-                colorScheme="blue"
-                rightIcon={<Code />}
-              >
-                Kode Sumber
-              </Button>
-              <Button
-                as="a"
-                href={proyek.demo}
-                color="grey.500"
-                rightIcon={<Globe />}
-              >
-                Demo
-              </Button>
+              {proyek.source_code == null ? null : (
+                <Button
+                  as="a"
+                  href={proyek.source_code}
+                  mr="5"
+                  colorScheme="blue"
+                  rightIcon={<Code />}
+                >
+                  Kode Sumber
+                </Button>
+              )}
+              {proyek.demo == null ? null : (
+                <Button
+                  as="a"
+                  href={proyek.demo}
+                  color="grey.500"
+                  rightIcon={<Globe />}
+                >
+                  Demo
+                </Button>
+              )}
             </Box>
 
             <Divider

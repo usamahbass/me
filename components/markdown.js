@@ -8,8 +8,10 @@ export default function Markdown({ source }) {
       as="article"
       className="markdown-body"
       marginBottom="50px"
-      style={{ color: colorMode === "dark" ? "#fff" : null }}
       dangerouslySetInnerHTML={{ __html: source }}
+      style={{
+        color: colorMode === "dark" ? "#fff" : null,
+      }}
     />
   );
 }

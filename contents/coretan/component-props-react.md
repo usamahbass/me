@@ -3,28 +3,28 @@ title: Component dan Props di React
 slug: component-props-react
 date: 10 Januari 2021
 thumbnail: https://miro.medium.com/max/3600/1*HSisLuifMO6KbLfPOKtLow.jpeg
-spoiler: Jika anda sudah pernah belajar JavaScript , anda pasti tau dengan fungsi dalam JavaScript. Secara konsep, komponen mirip dengan fungsi pada JavaScript. Komponen menerima beberapa masukan (props) dan mengembalikan element yang dideskripsikan .
+spoiler: Jika ente sudah pernah belajar JavaScript , ente pasti tau dengan fungsi dalam JavaScript. Secara konsep, komponen mirip dengan fungsi pada JavaScript. Komponen menerima beberapa masukan (props) dan mengembalikan element yang dideskripsikan .
 ---
 
-Jika anda sudah pernah belajar JavaScript , anda pasti tau dengan fungsi dalam JavaScript. Secara konsep, komponen mirip dengan fungsi pada JavaScript. Komponen menerima beberapa masukan (_props_) dan mengembalikan element yang dideskripsikan .
+Jika ente sudah pernah belajar JavaScript , ente pasti tau dengan fungsi dalam JavaScript. Secara konsep, komponen mirip dengan fungsi pada JavaScript. Komponen menerima beberapa masukan (_props_) dan mengembalikan element yang dideskripsikan .
 
 ### Class Komponen dan Fungsi Komponen
 
 Cara untuk mendefinisikan sebuah komponen adalah dengan menuliskan fungsi JavaScript atau di React disebut dengan React Hooks
 
 ```js
-function Hai(props) {
-  return <h1>Halo {props.name}</h1>;
+function Ahlan(props) {
+  return <h1>Ahlan {props.name}</h1>;
 }
 ```
 
 atau juga bisa dengan Class Komponen (_ES6_ _class_)
 
 ```js
-class Hai extends React.Component {
+class Ahlan extends React.Component {
     render() {
         return (
-            <h1>Halo {this.props.name}</h1>;
+            <h1>Ahlan {this.props.name}</h1>;
         );
     }
 }
@@ -33,11 +33,11 @@ class Hai extends React.Component {
 ### Merender Komponen
 
 ```js
-function Hai(props) {
-    return <h1>Halo {props.name}</h1>
+function Ahlan(props) {
+    return <h1>Ahlan {props.name}</h1>
 }
 
-const el = <Halo name="Bass" />
+const el = <Ahlan name="Bass" />
 
 ReactDOM.render(
     el,
@@ -52,16 +52,16 @@ Sebuah dialog,tombol,form, di dalam React itu semua dinyatakan sebagai sebuah ko
 contoh :
 
 ```js
-const Hai = (props) => {
-  return <h1>Halo {props.name}</h1>;
+const Ahlan = (props) => {
+  return <h1>Ahlan {props.name}</h1>;
 };
 
 const App = () => {
   return (
     <>
-      <Hai name="Hai" />
-      <Hai name="Usamah" />
-      <Hai name="Basalamah" />
+      <Ahlan name="Ahlan" />
+      <Ahlan name="Usamah" />
+      <Ahlan name="Basalamah" />
     </>
   );
 };
@@ -85,7 +85,7 @@ import React from "react";
 const SapaUser = (props) => {
   return (
     <h6>
-      Halo, {props.user}. <br /> Silahkan Login !
+      Ahlan, {props.user}. <br /> Silahkan Login !
     </h6>
   );
 };
@@ -148,6 +148,8 @@ const App = () => {
 ReactDOM.render(<App />, document.getElementById("root"));
 ```
 
-### Selanjutnya Apa ?
+### Selanjutnya Ape ?
 
 pelajari tentang state , lifecycle dalam ReactJs dengan melihat dokumentasinya di [sini](https://id.reactjs.org/docs/state-and-lifecycle.html)
+
+***Barakallahufiikum**

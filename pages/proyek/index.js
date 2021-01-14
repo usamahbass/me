@@ -71,7 +71,7 @@ export default function OSS({ proyek }) {
                           alt={el.title}
                           title={el.title}
                           date={el.date}
-                          desc={el.slug}
+                          desc={el.spoiler}
                         />
                       </a>
                     </Link>

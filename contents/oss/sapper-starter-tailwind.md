@@ -1,21 +1,21 @@
 ---
-title: My first proyek
-slug: proyek
-demo: https://github.com/usamahbass/me
-source_code: https://github.com/usamahbass
-thumbnail: https://api.pondokprogrammer.com/img/article/1609228826_4_props.png
-spoiler: tes
-date: 32 Januari 2020
+title: Sapper Starter Tailwind
+slug: sapper-starter-tailwind
+demo: null
+source_code: https://github.com/usamahbass/sapper-starter-tailwind
+thumbnail: https://dotdev.co/wp-content/uploads/2019/05/tailwindcss-v1.png
+spoiler: Starter sapper dengan tailwind css
+date: November 2020
 tech:
   - [
-      "NextJS",
-      "https://avatars1.githubusercontent.com/u/14985020?s=200&v=4",
-      "https://nextjs.org",
+      "Sapper",
+      "https://styles.redditmedia.com/t5_u8ynk/styles/communityIcon_s6agobh56o541.png?width=256&s=c053025991637179047f2141be64b3cdc8500cae",
+      "https://sapper.svelte.dev/",
     ]
   - [
-      "ChakraUI",
-      "https://avatars3.githubusercontent.com/u/54212428?s=280&v=4",
-      "https://chakraui.com",
+      "Tailwind CSS",
+      "https://avatars3.githubusercontent.com/u/67109815?s=200&v=4",
+      "https://tailwindcss.com/",
     ]
 ---
 

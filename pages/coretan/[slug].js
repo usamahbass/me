@@ -67,6 +67,7 @@ export default function IsCoretan({ coretan }) {
         </Box>
         <Divider mb={10} />
         <Markdown source={coretan.content} />
+        <Divider mb={10} />
         <Shared />
       </Container>
     </>

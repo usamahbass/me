@@ -1,21 +1,26 @@
 ---
-title: My first oss
-slug: oss
-demo: https://github.com/usamahbass/me
-source_code: https://github.com/usamahbass
-thumbnail: https://api.pondokprogrammer.com/img/article/1609228826_4_props.png
-spoiler: tes
-date: 32 Januari 2020
+title: Fetch Axios Generator
+slug: fetch-axios-generator
+demo: https://usamahbass.github.io/fetch-axios-generator
+source_code: https://github.com/usamahbass/fetch-axios-generator
+thumbnail: https://static.businessworld.in/article/article_extra_large_image/1592893567_3HWQ4D_Coding.jpg
+spoiler: Memulai setup blog dengan sapper dan markdown
+date: November 2020
 tech:
   - [
-      "NextJS",
-      "https://avatars1.githubusercontent.com/u/14985020?s=200&v=4",
-      "https://nextjs.org",
+      "JavaScript",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png",
+      "https://javascript.com",
     ]
   - [
-      "ChakraUI",
-      "https://avatars3.githubusercontent.com/u/54212428?s=280&v=4",
-      "https://chakraui.com",
+      "Bootstrap",
+      "https://avatars1.githubusercontent.com/u/2918581?s=200&v=4",
+      "https://getbootstrap.com",
+    ]
+  - [
+      "Axios",
+      "https://avatars3.githubusercontent.com/u/32372333?s=200&v=4",
+      "https://github.com/axios/axios",
     ]
 ---
 

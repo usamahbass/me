@@ -21,7 +21,7 @@ export default function Home({ coretan, proyek, oss }) {
           templateColumns="repeat(auto-fit, minmax(18rem, 1fr))"
         >
           {coretan
-            ? coretan.map((el, i) => (
+            ? coretan.slice(0, 3).map((el, i) => (
                 <GridItem key={i}>
                   <Link href={`/coretan/${el.slug}`}>
                     <a>
@@ -29,7 +29,7 @@ export default function Home({ coretan, proyek, oss }) {
                         isNew
                         title={el.title}
                         date={el.date}
-                        desc={el.slug}
+                        desc={el.spoiler}
                       />
                     </a>
                   </Link>
@@ -68,7 +68,7 @@ export default function Home({ coretan, proyek, oss }) {
           templateColumns="repeat(auto-fit, minmax(18rem, 1fr))"
         >
           {proyek
-            ? proyek.map((el, i) => (
+            ? proyek.slice(0, 3).map((el, i) => (
                 <GridItem key={i}>
                   <Link href={`/proyek/${el.slug}`}>
                     <a>
@@ -81,7 +81,7 @@ export default function Home({ coretan, proyek, oss }) {
                         alt={el.title}
                         title={el.title}
                         date={el.date}
-                        desc={el.slug}
+                        desc={el.spoiler}
                       />
                     </a>
                   </Link>
@@ -120,7 +120,7 @@ export default function Home({ coretan, proyek, oss }) {
           templateColumns="repeat(auto-fit, minmax(18rem, 1fr))"
         >
           {oss
-            ? oss.map((el, i) => (
+            ? oss.slice(0, 3).map((el, i) => (
                 <GridItem key={i}>
                   <Link href={`/oss/${el.slug}`}>
                     <a>
@@ -133,7 +133,7 @@ export default function Home({ coretan, proyek, oss }) {
                         alt={el.title}
                         title={el.title}
                         date={el.date}
-                        desc={el.slug}
+                        desc={el.spoiler}
                       />
                     </a>
                   </Link>

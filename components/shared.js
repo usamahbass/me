@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { HStack, Button, Heading, useClipboard } from "@chakra-ui/react";
+import { HStack, Button, Heading, useClipboard, useColorMode, color } from "@chakra-ui/react";
 import { Facebook, Twitter, Linkedin, Copy, Check } from "react-feather";
 import { twitter, facebook, linkedin } from "./sharelink";
 import { IsContext } from "../context";
@@ -7,6 +7,8 @@ import Proptypes from "prop-types";
 
 export default function Shared({ urlTwitter, urlFacebook, urlLinkedin }) {
   const [path] = useContext(IsContext);
+
+  const { colorMode } = useColorMode();
 
   const { hasCopied, onCopy } = useClipboard(
     `https://usamahbass.vercel.app${path}`
@@ -25,7 +27,7 @@ export default function Shared({ urlTwitter, urlFacebook, urlLinkedin }) {
 
   return (
     <HStack mb="10" alignItems="center" flexDirection={["column", "row"]}>
-      <Heading mr="3" color="#333" mb="5" size="md">
+      <Heading mr="3" color={colorMode === "dark" ? "#fff" : "#333"} mb="5" size="md">
         Bagiin dong :(
       </Heading>
 
