@@ -1,9 +1,10 @@
-import { Box, Heading, Text, Link } from "@chakra-ui/react";
+import { Box, Heading, useColorMode, Link } from "@chakra-ui/react";
 import { NextSeo } from "next-seo";
 import { Title } from "../components";
 import { TentangSEO } from "../next-seo.config";
 
 export default function Tentang() {
+  const { colorMode } = useColorMode();
   return (
     <>
       <NextSeo {...TentangSEO} />
@@ -14,12 +15,12 @@ export default function Tentang() {
         mb={15}
       >
         <Title title="Tentang Ane" />
-        <Heading mt="5" size="md" fontWeight="100">
+        <Heading color={colorMode === "dark" ? "rgb(113, 128, 150)" : null} mt="5" size="md" fontWeight="100">
           Ahlan &#128075;, ane Usamah Basalamah. Ane tinggal Indonesia, berusia
-          19 tahun ama suka membangun situs web maupun aplikasi dan
+          19 tahun ane suka membangun situs web maupun aplikasi dan
           berkontribusi pada proyek sumber terbuka apa pun yang ane suka.
         </Heading>
-        <Heading mt="5" size="md" fontWeight="100">
+        <Heading color={colorMode === "dark" ? "rgb(113, 128, 150)" : null} mt="5" size="md" fontWeight="100">
           Ane terjun ke dunia programming pada awal tahun 2019, pada waktu itu
           ane belajar pemograman menggunakan HP dan bahasa yang ane gunakan
           adalah
@@ -81,7 +82,7 @@ export default function Tentang() {
           gak lama, karena bosan akhirnya ane memutuskan terjun ke dunia web
           development.
         </Heading>
-        <Heading mt="5" size="md" fontWeight="100">
+        <Heading color={colorMode === "dark" ? "rgb(113, 128, 150)" : null} mt="5" size="md" fontWeight="100">
           Nah, karena gak tau mau mulai dari mane akhirnya ane memutuskan untuk
           melakukan research &#x1F50D; terlebih dahulu. Search sana sini,
           akhirnya ane memutuskan untuk memulai dengan belajar
@@ -113,7 +114,7 @@ export default function Tentang() {
             MySQL.
           </Link>
         </Heading>
-        <Heading mt="5" size="md" fontWeight="100">
+        <Heading color={colorMode === "dark" ? "rgb(113, 128, 150)" : null} mt="5" size="md" fontWeight="100">
           Karena suka, ane tekuni dunia web development selama kurang lebih 1
           bulan. Pada bulan September 2019 , ane memutuskan untuk mondok di
           <Link
@@ -146,7 +147,7 @@ export default function Tentang() {
           sebagai landasannye.
         </Heading>
         <Title title="Setup Ane" style={{ marginTop: "30px" }} />
-        <Heading mt="5" size="md" fontWeight="100">
+        <Heading color={colorMode === "dark" ? "rgb(113, 128, 150)" : null} mt="5" size="md" fontWeight="100">
           Ane make Laptop Lenovo ideapad 330. Make OS Linux,
           <Link
             ml="1"

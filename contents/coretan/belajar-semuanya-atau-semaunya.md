@@ -1,6 +1,6 @@
 ---
 title: Belajar semuanya atau belajar semaunya ?
-slug: diam-salah-bicara-pun-salah
+slug: belajar-semuanya-atau-semaunya
 date: 11 Januari 2021
 thumbnail: https://miro.medium.com/max/3600/1*HSisLuifMO6KbLfPOKtLow.jpeg
 spoiler: Tergantung tujuan ente masing-masing sih, belajar semuanya agar apa ?, belajar semaunya agar apa ?.
