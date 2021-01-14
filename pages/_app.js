@@ -3,7 +3,7 @@ import { ContextProvider } from "../context";
 import { Backtop } from "../components";
 import Head from "next/head";
 import Layout from "../layout";
-import theme from "./theme";
+import theme from "../theme";
 import "github-markdown-css";
 import "../styles/globals.css";
 

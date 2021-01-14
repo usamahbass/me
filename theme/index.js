@@ -5,9 +5,9 @@ const theme = extendTheme({
     body: `'Overpass', sans-serif`,
     heading: `'Overpass', sans-serif`,
     text: `'Overpass', sans-serif`,
-    colors: {
-      primary: {},
-    },
+  },
+  colors: {
+    primary: {},
   },
 });
 
