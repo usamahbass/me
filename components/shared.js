@@ -1,33 +1,43 @@
 import { useContext } from "react";
-import { HStack, Button, Heading, useClipboard, useColorMode, color } from "@chakra-ui/react";
+import {
+  HStack,
+  Button,
+  Heading,
+  useClipboard,
+  useColorMode,
+  color,
+} from "@chakra-ui/react";
 import { Facebook, Twitter, Linkedin, Copy, Check } from "react-feather";
-import { twitter, facebook, linkedin } from "./sharelink";
+import { facebook, linkedin } from "./sharelink";
 import { IsContext } from "../context";
-import Proptypes from "prop-types";
 
-export default function Shared({ urlTwitter, urlFacebook, urlLinkedin }) {
+export default function Shared() {
   const [path] = useContext(IsContext);
+  const url = `https://usamahbass.vercel.app${path.path}`;
 
   const { colorMode } = useColorMode();
 
-  const { hasCopied, onCopy } = useClipboard(
-    `https://usamahbass.vercel.app${path}`
-  );
+  const { hasCopied, onCopy } = useClipboard(url);
   function shareTwitter() {
-    window.open(`${twitter}/${urlTwitter}`);
+    window.open(`http://twitter.com/share?text=${path.twitterName}&url=${url}`);
   }
 
   function shareFacebook() {
-    window.open(`${facebook}/${urlFacebook}`);
+    window.open(`${facebook}${url}`);
   }
 
   function shareLinkedin() {
-    window.open(`${linkedin}/${urlLinkedin}`);
+    window.open(`${linkedin}${url}`);
   }
 
   return (
     <HStack mb="10" alignItems="center" flexDirection={["column", "row"]}>
-      <Heading mr="3" color={colorMode === "dark" ? "#fff" : "#333"} mb="5" size="md">
+      <Heading
+        mr="3"
+        color={colorMode === "dark" ? "#fff" : "#333"}
+        mb="5"
+        size="md"
+      >
         Bagiin dong :(
       </Heading>
 
@@ -66,9 +76,3 @@ export default function Shared({ urlTwitter, urlFacebook, urlLinkedin }) {
     </HStack>
   );
 }
-
-Shared.propTypes = {
-  urlTwitter: Proptypes.string.isRequired,
-  urlLinkedin: Proptypes.string.isRequired,
-  urlFacebook: Proptypes.string.isRequired,
-};

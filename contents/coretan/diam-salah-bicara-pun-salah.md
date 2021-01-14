@@ -3,7 +3,7 @@ title: Diam salah, bicara pun salah
 slug: diam-salah-bicara-pun-salah
 date: 12 Januari 2021
 thumbnail: https://cdn.pixabay.com/photo/2018/02/15/19/42/sunset-3156176__340.jpg
-spoiler: Tergantung tujuan ente masing-masing sih, belajar semuanya agar apa ?, belajar semaunya agar apa ?.
+spoiler: Ya, terkadang semua manusia pernah ngalami seperti itu. Tapi ahsannye diam sih, kenape? ya karena Rasullah shallallahu alaihi wasallam sendiri yang pernah berkata dalam sabdanya.
 ---
 
 Ya, terkadang semua manusia pernah ngalami seperti itu. Tapi ahsannye diam sih, kenape? ya karena Rasullah shallallahu alaihi wasallam sendiri yang pernah berkata dalam sabdanya:

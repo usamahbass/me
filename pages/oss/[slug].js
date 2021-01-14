@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Box, Button, Divider, Heading, Image } from "@chakra-ui/react";
 import { NextSeo } from "next-seo";
 import { Code, Globe } from "react-feather";
@@ -7,7 +7,11 @@ import { IsContext } from "../../context";
 import { OssContainer } from "../../containers";
 
 export default function IsOSS({ oss }) {
-  const [path] = useContext(IsContext);
+  const [path, setPath] = useContext(IsContext);
+
+  useEffect(() => {
+    setPath((path) => ({ ...path, path: window.location.pathname }));
+  }, []);
   return (
     <>
       <NextSeo
@@ -16,7 +20,7 @@ export default function IsOSS({ oss }) {
         type="blog"
         openGraph={{
           type: "blog",
-          url: `https://usamahbass.vercel.app${path}`,
+          url: `https://usamahbass.vercel.app${path.path}`,
           title: oss.title,
           description: oss.spoiler,
           images: [
@@ -31,7 +35,7 @@ export default function IsOSS({ oss }) {
           <Image
             display="block"
             width="100%"
-            height="406px"
+            height={["100%", "406px"]}
             src={oss.thumbnail}
             alt={oss.title}
           />

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Box, Container, Heading, Link, Text } from "@chakra-ui/react";
 import { Calendar, Edit } from "react-feather";
 import { NextSeo } from "next-seo";
@@ -6,7 +6,11 @@ import { IsContext } from "../../context";
 import { Markdown, Divider, Shared } from "../../components";
 
 export default function IsCoretan({ coretan }) {
-  const [path] = useContext(IsContext);
+  const [path, setPath] = useContext(IsContext);
+
+  useEffect(() => {
+    setPath((path) => ({ ...path, path: window.location.pathname }));
+  }, []);
 
   return (
     <>
@@ -16,7 +20,7 @@ export default function IsCoretan({ coretan }) {
         type="blog"
         openGraph={{
           type: "blog",
-          url: `https://usamahbass.vercel.app${path}`,
+          url: `https://usamahbass.vercel.app${path.path}`,
           title: coretan.title,
           description: coretan.spoiler,
           images: [
@@ -68,7 +72,7 @@ export default function IsCoretan({ coretan }) {
         <Divider mb={10} />
         <Markdown source={coretan.content} />
         <Divider mb={10} />
-        <Shared />
+        <Shared textTwitter={coretan.title} />
       </Container>
     </>
   );
