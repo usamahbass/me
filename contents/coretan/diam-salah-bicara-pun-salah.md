@@ -3,6 +3,7 @@ title: Diam salah, bicara pun salah
 slug: diam-salah-bicara-pun-salah
 date: 12 Januari 2021
 thumbnail: https://cdn.pixabay.com/photo/2018/02/15/19/42/sunset-3156176__340.jpg
+edit: https://github.com/usamahbass/me/blob/develop/contents/coretan/diam-salah-bicara-pun-salah.md
 spoiler: Ya, terkadang semua manusia pernah ngalami seperti itu. Tapi ahsannye diam sih, kenape? ya karena Rasullah shallallahu alaihi wasallam sendiri yang pernah berkata dalam sabdanya.
 ---
 
@@ -16,4 +17,4 @@ Dari Abu Hurairah RA bahwa Rasulullah SAW bersabda, "Barang siapa beriman kepada
 
 (HR Bukhari Muslim)
 
-**\*Barakallahufiikum**
+**Barakallahufiikum**

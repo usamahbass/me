@@ -2,6 +2,7 @@
 title: Belajar semuanya atau belajar semaunya ?
 slug: belajar-semuanya-atau-semaunya
 date: 11 Januari 2021
+edit: https://github.com/usamahbass/me/blob/develop/contents/coretan/belajar-semuanya-atau-semaunya.md
 thumbnail: https://cdn.pixabay.com/photo/2015/07/19/10/00/still-life-851328__340.jpg
 spoiler: Tergantung tujuan ente masing-masing sih, belajar semuanya agar apa ?, belajar semaunya agar apa ?.
 ---

@@ -1,20 +1,11 @@
-import {
-  Avatar,
-  Grid,
-  GridItem,
-  Heading,
-  Link,
-  Text,
-  useMediaQuery,
-} from "@chakra-ui/react";
+import { Avatar, Grid, GridItem, Heading, Link, Text } from "@chakra-ui/react";
 
 export default function Hero() {
-  const [md] = useMediaQuery("(max-width: 960px)");
   return (
     <Grid
-      templateColumns={md ? "1fr" : "20rem 1fr"}
-      templateRows={md ? "14rem 1fr" : null}
-      textAlign={md ? "center" : "left"}
+      templateColumns={["1fr", "20rem 1fr"]}
+      templateRows={["14rem 1fr", null]}
+      textAlign={["center", "left"]}
       gap="1rem"
       position="relative"
       justifyContent="center"

@@ -20,3 +20,15 @@
   font-weight: bold;
   font-size: 1rem;
 }
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 20rem 1fr;
+}
+
+@media (max-width: 960px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 14rem 1fr;
+  }
+}

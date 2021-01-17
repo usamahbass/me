@@ -21,7 +21,7 @@ export default function Home({ coretan, proyek, oss }) {
           templateColumns="repeat(auto-fit, minmax(18rem, 1fr))"
         >
           {coretan
-            ? coretan.slice(0, 3).map((el, i) => (
+            ? coretan.reverse().slice(0, 3).map((el, i) => (
                 <GridItem key={i}>
                   <Link href={`/coretan/${el.slug}`}>
                     <a>

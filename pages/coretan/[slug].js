@@ -60,7 +60,7 @@ export default function IsCoretan({ coretan }) {
             >
               <Edit style={{ marginRight: 5 }} />
               <Link
-                href="https://github.com/usamahbass/me/blob/develop/contents/coretan/component-props-react.md"
+                href={coretan.edit}
                 position="relative"
                 top="3px"
               >
