@@ -10,6 +10,8 @@ spoiler: udahlah, tinggalin aja pacar pacaran itu, takut ama Allah. Fokus aja du
 dalil nya jelas, ada dalam surah al-isra ayat 32
 
 وَلَا تَقْرَبُوا الزِّنَا ۖ إِنَّهُ كَانَ فَاحِشَةً وَسَاءَ سَبِيلًا
+
+
 "Dan janganlah kamu mendekati zina; (zina) itu sungguh suatu perbuatan keji, dan suatu jalan yang buruk."
 
 udahlah, tinggalin aja pacar pacaran itu, takut ama Allah. Fokus aja dulu ama tujuan ente, ntar kalo udah siap langsung aja **taaruf**, biar pacaran nya **ntar** kalo udah nikah, biar halal.
@@ -23,6 +25,7 @@ iya sih emang, suka ama lawan jenis itu **fitrah** sesuai firman Allah dalam sur
 kalo memang ente suka ya doain aja, minta sama Allah agar dipilihkan yang terbaik gausah pacar pacaran deh. Percaya dah, azab Allah itu pedih.
 
 ane bukan ustadz ye, cuma mau share kebaikan aje :)
+
 udeh ye, kepanjangan nih kayaknye :)
 
 **Barakallahufiikum**
