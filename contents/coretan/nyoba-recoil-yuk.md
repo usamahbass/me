@@ -24,7 +24,9 @@ nah sebelumnya apasih itu recoiljs ?, singkat aja ya recoil adalah library state
 sebelumnye install dulu dah recoil nya, bisa make **yarn** atau **npm** bebas,
 kalo ane sih pake yarn jadi
 
-    yarn install recoil
+```bash
+yarn install recoil
+```
 
 ## RecoilRoot
 
