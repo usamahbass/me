@@ -4,10 +4,10 @@ slug: nyoba-recoil-yuk
 date: 12 Februari 2021
 edit: https://github.com/usamahbass/me/blob/develop/contents/coretan/nyoba-recoil-yuk.md
 thumbnail: https://cdn.pixabay.com/photo/2016/01/19/14/47/laptop-work-1148958__340.jpg
-spoiler: Kalo yang sudah familiar ama React, biasanya kalo ingin ngepass state atau functionalitas lainnya dari component satu ke component 1 ke component lainnya
+spoiler: Kalo yang sudah familiar ama React, biasanya kalo ingin ngepass state atau functionalitas lainnya dari component satu ke component 1 ke component lainnya bisa pake yang namanya...
 ---
 
-Kalo yang sudah familiar ama React, biasanya kalo ingin ngepass state atau functionalitas lainnya dari component satu ke component 1 ke component lainnya bisa menggunakan yang namanya **_props ?_**, tapi beda kasus lagi kalo contohnya kek gini nih
+Kalo yang sudah familiar ama React, biasanya kalo ingin ngepass state atau functionalitas lainnya dari component satu ke component 1 ke component lainnya bisa pake yang namanya **_props ?_**, tapi beda kasus lagi kalo contohnya kek gini nih
 
 ![alur props](https://res.cloudinary.com/dvsffkyli/image/upload/v1612892839/MacBook_Pro_-_2_hycbvo.png)
 
