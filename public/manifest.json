@@ -1,0 +1,16 @@
+{
+  "name": "Usamah Basalamah",
+  "short_name": "UsamahBass",
+  "icons": [
+    {
+      "src": "./me.jpg",
+      "type": "image/jpeg",
+      "sizes": "65x65"
+    }
+  ],
+  "background_color": "#FFFFFF",
+  "description": "Ahlan 👋 ! Ane Usamah Basalamah . Bikin RaksyeDev . Kadang suka React, kadang juga Svelte tapi buat ini pake Next.",
+  "display": "standalone",
+  "start_url": "/",
+  "theme_color": "#3182CE"
+}
