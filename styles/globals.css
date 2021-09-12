@@ -1,14 +1,9 @@
-@import "./components/highlight.css";
-@import "./components/_emoji.css";
-@import "./components/_zigzagdivider.css";
-@import "./utilities/_helper.css";
-@import "./utilities/_typography.css";
-
 html,
 body {
   padding: 0;
   margin: 0;
-  scroll-behavior: smooth;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
