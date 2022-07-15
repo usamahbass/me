@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import {
   Box,
   Input,
@@ -6,6 +5,7 @@ import {
   InputLeftElement,
   Grid,
   GridItem,
+  Button,
   Stack,
   Text,
   Radio,
@@ -16,20 +16,13 @@ import {
   DrawerHeader,
   useDisclosure,
   RadioGroup,
-  Button,
-  Checkbox,
 } from "@chakra-ui/react";
-import { useState } from "react";
-import {
-  Search,
-  Filter as FilterIcon,
-  BarChart as SortIcon,
-} from "react-feather";
+import { useEffect, useState } from "react";
+import { Search, BarChart as SortIcon } from "react-feather";
 import { NextSeo } from "next-seo";
-import Link from "next/link";
-import { CoretanSEO } from "../../next-seo.config";
 import { Title, Card } from "../../components";
-import { uniqueArray } from "../../utils/uniqueArray";
+import { EksperimenSEO } from "../../next-seo.config";
+import Link from "next/link";
 
 const styleIcon = {
   position: "absolute",
@@ -38,21 +31,13 @@ const styleIcon = {
   width: "1.2rem",
 };
 
-export default function Coretan({ coretan }) {
+export default function Eksperimen({ eksperimen }) {
   const [valueSearch, setValueSearch] = useState("");
 
-  const [allTags, setAllTags] = useState([]);
   const [sortDate, setSortDate] = useState("1");
   const [sortTitle, setSortTitle] = useState("1");
-  const [filterTags, setFilterTags] = useState([]);
 
-  const [isCoretan, setIsCoretan] = useState(coretan);
-
-  const {
-    isOpen: isOpenDrawerSort,
-    onOpen: onOpenDrawerSort,
-    onClose: onCloseDrawerSort,
-  } = useDisclosure();
+  const [isEksperimen, setIsEksperimen] = useState(eksperimen);
 
   const {
     isOpen: isOpenDrawerFilter,
@@ -61,80 +46,59 @@ export default function Coretan({ coretan }) {
   } = useDisclosure();
 
   useEffect(() => {
-    coretan?.map((elem) =>
-      elem.tags.map((tag) => {
-        setAllTags((prevAllTags) => uniqueArray([...prevAllTags, tag]));
-        setFilterTags((prevAllTags) => uniqueArray([...prevAllTags, tag]))
-      })
-    );
-  }, []);
-
-  useEffect(() => {
     if (sortDate === "1") {
-      const newCoretan = isCoretan.sort(
+      const newEksperimen = isEksperimen.sort(
         (a, b) =>
           Math.abs(Date.now() - new Date(a.date)) -
           Math.abs(Date.now() - new Date(b.date))
       );
 
-      setIsCoretan(newCoretan);
+      setIsEksperimen(newEksperimen);
     }
 
     if (sortDate === "2") {
-      const newCoretan = isCoretan.sort(
+      const newEksperimen = isEksperimen.sort(
         (a, b) =>
           Math.abs(Date.now() - new Date(b.date)) -
           Math.abs(Date.now() - new Date(a.date))
       );
 
-      setIsCoretan(newCoretan);
+      setIsEksperimen(newEksperimen);
     }
   }, [sortDate]);
 
   useEffect(() => {
     if (sortTitle === "1") {
-      const newCoretan = isCoretan.sort(
+      const newEksperimen = isEksperimen.sort(
         (a, b) =>
           a.title[0].length - b.title[0].length ||
           a.title[0].localeCompare(b.title[0])
       );
 
-      setIsCoretan(newCoretan);
+      setIsEksperimen(newEksperimen);
     }
 
     if (sortTitle === "2") {
-      const newCoretan = isCoretan.sort(
+      const newEksperimen = isEksperimen.sort(
         (a, b) =>
           b.title[0].length - a.title[0].length ||
           b.title[0].localeCompare(a.title[0])
       );
 
-      setIsCoretan(newCoretan);
+      setIsEksperimen(newEksperimen);
     }
   }, [sortTitle]);
 
-  useEffect(() => {
-    const newCoretan = coretan
-      ?.map((elem) => {
-        if (elem?.tags?.some((tag) => filterTags?.includes(tag))) {
-          return elem;
-        }
-      })
-      .filter((elem) => typeof elem !== "undefined");
-
-    setIsCoretan(newCoretan);
-  }, [filterTags]);
-
   return (
     <>
-      <NextSeo {...CoretanSEO} />
+      <NextSeo {...EksperimenSEO} />
       <Box
         display="flex"
         justifyContent="center"
         flexDirection="column"
         mb="20"
       >
-        <Title title="Coretan" />
+        <Title title="Eksperimen" />
 
         <Stack direction="row" alignItems="center" spacing={5}>
           <InputGroup>
@@ -145,15 +109,11 @@ export default function Coretan({ coretan }) {
             <Input
               onChange={(e) => setValueSearch(e.target.value)}
               type="tel"
-              placeholder="Cari coretan ?"
+              placeholder="Cari Eksperimen ?"
             />
           </InputGroup>
 
-          <Button leftIcon={<FilterIcon />} onClick={onOpenDrawerFilter}>
-            Filter
-          </Button>
-
-          <Button leftIcon={<SortIcon />} onClick={onOpenDrawerSort}>
+          <Button leftIcon={<SortIcon />} onClick={onOpenDrawerFilter}>
             Urutkan
           </Button>
         </Stack>
@@ -163,8 +123,8 @@ export default function Coretan({ coretan }) {
           gap="1.25rem"
           templateColumns="repeat(auto-fit, minmax(18rem, 1fr))"
         >
-          {isCoretan
-            ? isCoretan
+          {isEksperimen
+            ? isEksperimen
                 .filter(
                   (el, i) =>
                     el.title
@@ -173,10 +133,14 @@ export default function Coretan({ coretan }) {
                 )
                 .map((el, i) => (
                   <GridItem key={i}>
-                    <Link href={`/coretan/${el.slug}`}>
+                    <Link href={`/eksperimen/${el.slug}`}>
                       <a>
                         <Card
-                          tags={el.tags}
+                          isImage
+                          source_code={el.source_code}
+                          demo={el.demo}
+                          image={el.thumbnail}
+                          alt={el.title}
                           title={el.title}
                           date={el.date}
                           desc={el.spoiler}
@@ -188,16 +152,17 @@ export default function Coretan({ coretan }) {
             : "memuat data..."}
         </Grid>
 
-        {/* DRAWER SORT */}
         <Drawer
           size="lg"
           placement="bottom"
-          onClose={onCloseDrawerSort}
-          isOpen={isOpenDrawerSort}
+          onClose={onCloseDrawerFilter}
+          isOpen={isOpenDrawerFilter}
         >
           <DrawerOverlay />
           <DrawerContent>
-            <DrawerHeader borderBottomWidth="1px">Urutkan Coretan</DrawerHeader>
+            <DrawerHeader borderBottomWidth="1px">
+              Urutkan Eksperimen
+            </DrawerHeader>
             <DrawerBody mt={4} pb={5}>
               <Stack spacing={5}>
                 <Box>
@@ -239,50 +204,6 @@ export default function Coretan({ coretan }) {
             </DrawerBody>
           </DrawerContent>
         </Drawer>
-
-        {/* DRAWER FILTER */}
-        <Drawer
-          size="lg"
-          placement="bottom"
-          onClose={onCloseDrawerFilter}
-          isOpen={isOpenDrawerFilter}
-        >
-          <DrawerOverlay />
-          <DrawerContent>
-            <DrawerHeader borderBottomWidth="1px">Filter Coretan</DrawerHeader>
-            <DrawerBody mt={4} pb={5}>
-              <Stack spacing={5}>
-                <Box>
-                  <Text mb={3} fontSize="1.2rem">
-                    Filter by tags
-                  </Text>
-
-                  <Stack mt={3} spacing={3}>
-                    {allTags?.map((tag, i) => (
-                      <Checkbox
-                        key={i}
-                        defaultChecked={filterTags?.includes(tag)}
-                        onChange={(e) => {
-                          if (e.target.checked) {
-                            setFilterTags((prevFilterTags) =>
-                              uniqueArray([...prevFilterTags, tag])
-                            );
-                          } else {
-                            setFilterTags(
-                              filterTags?.filter((el) => el !== tag)
-                            );
-                          }
-                        }}
-                      >
-                        {tag}
-                      </Checkbox>
-                    ))}
-                  </Stack>
-                </Box>
-              </Stack>
-            </DrawerBody>
-          </DrawerContent>
-        </Drawer>
       </Box>
     </>
   );
@@ -294,15 +215,15 @@ export async function getStaticProps() {
 
   const { v4: uuid } = require("uuid");
 
-  const filesCoretan = fs.readdirSync(
-    `${process.cwd()}/contents/coretan`,
+  const filesEksperimen = fs.readdirSync(
+    `${process.cwd()}/contents/eksperimen`,
     "utf-8"
   );
 
-  const coretan = filesCoretan
+  const eksperimen = filesEksperimen
     .filter((fn) => fn.endsWith(".md"))
     .map((fn) => {
-      const path = `${process.cwd()}/contents/coretan/${fn}`;
+      const path = `${process.cwd()}/contents/eksperimen/${fn}`;
       const rawContent = fs.readFileSync(path, {
         encoding: "utf-8",
       });
@@ -313,7 +234,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      coretan,
+      eksperimen,
     },
   };
 }

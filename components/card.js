@@ -9,6 +9,7 @@ import {
   Avatar,
   Link as LinkChakra,
   Button,
+  Stack,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { Calendar, Code, Globe } from "react-feather";
@@ -24,6 +25,7 @@ export const Card = ({
   alt,
   source_code,
   demo,
+  tags,
 }) => {
   const [open, setOpen] = useState(false);
 
@@ -44,7 +46,9 @@ export const Card = ({
             "0 1.5rem 2.5rem rgba(22,28,45,.1),0 .3rem 0.5rem -.50rem rgba(22,28,45,.05) !important",
         }}
       >
-        {isImage ? <Image width="100%" height="206px" src={image} alt={alt} /> : null}
+        {isImage ? (
+          <Image width="100%" height="206px" src={image} alt={alt} />
+        ) : null}
         <Box p="6">
           <Box d="flex" alignItems="center">
             {isNew ? (
@@ -91,6 +95,16 @@ export const Card = ({
           >
             {title}
           </Box>
+
+          {tags?.length && (
+            <Stack direction="row" alignItems="center" spacing={1}>
+              {tags?.slice(0, 3)?.map((tag, i) => (
+                <Text as="small" color="gray.400" key={i}>
+                  #{tag}
+                </Text>
+              ))}
+            </Stack>
+          )}
 
           <Divider mt="3" />
 
@@ -150,12 +164,7 @@ export const CardStack = ({ stack }) => {
       {stack.map((el, i) => (
         <Box key={i}>
           <Box display="flex" mt="5" alignItems="center">
-            <Avatar
-              bg={!el ? null : "none"}
-              src={el[1]}
-              name={el[0]}
-              mr="2"
-            />
+            <Avatar bg={!el ? null : "none"} src={el[1]} name={el[0]} mr="2" />
             <LinkChakra
               href={el[2]}
               mr="2"

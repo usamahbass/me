@@ -16,62 +16,55 @@ export default function Hero() {
         <a href="https://github.com/usamahbass">
           <Avatar
             width={256}
-            height="auto"
-            src="/me.jpg"
+            height={256}
+            src="/bass.jpeg"
             name="Usamah Basalamah"
           />
         </a>
       </GridItem>
       <GridItem>
         <Text fontSize="1.3rem" fontWeight="bold" color="blue.500">
-          Ahlan
+          Ahlann
           <span className="emoji wave" role="img" aria-label="hand wave"></span>
         </Text>
         <Heading fontSize={{ base: "1.70rem", md: "3.5rem" }}>
-          Ane Usamah Basalamah .
+          Usamah Basalamah .
         </Heading>
 
         <Text fontSize={{ base: "1rem", md: "1.125rem" }} color="gray.500">
-          Bikin
+          An
           <Link
             ml={1}
             mr={1}
-            href="https://raksyedev.netlify.app/"
+            target="_blank"
             _hover={{ color: "blue.500" }}
+            href="https://www.google.com/search?q=front+end+developer"
           >
-            RaksyeDev .
+            Frontend Developer,
           </Link>
+          20 tahun Indonesia.
         </Text>
 
         <Text fontSize={{ base: "1rem", md: "1.125rem" }} color="gray.500">
-          Kadang suka
+          Berkulik di dunia per
           <Link
             ml={1}
             mr={1}
-            href="https://reactjs.org/"
-            _hover={{ color: "blue.500" }}
+            href="https://www.javascript.com/"
+            _hover={{ color: "#E5D14B" }}
           >
-            React
+            javascript
           </Link>
-          , kadang juga
+          pan, ama per
           <Link
             ml={1}
             mr={1}
-            href="https://svelte.dev/"
-            _hover={{ color: "#FF3E00" }}
+            href="https://www.typescriptlang.org/"
+            _hover={{ color: "#2E75C1" }}
           >
-            Svelte
+            typescript
           </Link>
-          tapi buat ini pake
-          <Link
-            ml={1}
-            mr={1}
-            href="https://nextjs.org/"
-            _hover={{ color: "#000" }}
-          >
-            Next
-          </Link>
-          .
+          pan.
         </Text>
       </GridItem>
     </Grid>

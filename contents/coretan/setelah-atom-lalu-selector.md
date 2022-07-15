@@ -2,6 +2,7 @@
 title: Setelah atom lalu selector
 slug: setelah-atom-lalu-selector
 date: 15 Februari 2021
+tags: [react, recoil]
 edit: https://github.com/usamahbass/me/blob/develop/contents/coretan/setelah-atom-lalu-selector.md
 thumbnail: https://cdn.pixabay.com/photo/2016/09/23/20/54/doors-1690423__340.jpg
 spoiler: nah, kalo kemaren kite dah bahas recoil ama atom nye. Sekarang kite akan bahas yang namanye selector, sebelum masuk ke selector coba baca baca coretan sebelumnye...

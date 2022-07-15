@@ -17,7 +17,7 @@ export default function Tentang() {
         <Title title="Tentang Ane" />
         <Heading color={colorMode === "dark" ? "rgb(113, 128, 150)" : null} mt="5" size="md" fontWeight="100">
           Ahlan &#128075;, ane Usamah Basalamah. Ane tinggal Indonesia, berusia
-          19 tahun ane suka membangun situs web maupun aplikasi dan
+          20 tahun ane suka membangun situs web maupun aplikasi dan
           berkontribusi pada proyek sumber terbuka apa pun yang ane suka.
         </Heading>
         <Heading color={colorMode === "dark" ? "rgb(113, 128, 150)" : null} mt="5" size="md" fontWeight="100">
@@ -158,9 +158,9 @@ export default function Tentang() {
               borderBottom: "2px solid",
               transition: "all 0.15s ease-out",
             }}
-            href="https://lubuntu.net/"
+            href="https://ubuntu.com/"
           >
-            Lubuntu
+            Ubuntu
           </Link>
           untuk lebih spesifik. Sebelumnye juga sempat lama di
           <Link
@@ -172,9 +172,9 @@ export default function Tentang() {
               borderBottom: "2px solid",
               transition: "all 0.15s ease-out",
             }}
-            href="https://ubuntu.com/"
+            href="https://lubuntu.net/"
           >
-            Ubuntu
+            Lubuntu
           </Link>
           lalu pindah ke
           <Link

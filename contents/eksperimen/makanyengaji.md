@@ -1,0 +1,61 @@
+---
+title: MakanyeNgaji
+slug: makanyengaji
+demo: https://makanyengaji.vercel.app
+source_code: https://github.com/usamahbass/makanyengaji/
+thumbnail: https://images.unsplash.com/photo-1575645513913-c002ea3b2e01?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8cXVyYW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60
+spoiler: Makanye Ngaji adalah platform qur'an digital yang dibuat dengan tujuan menyadarkan kaum muslim khususnya di Indonesia untuk membiasakan ngaji setiap hari. Dan juga kaum muslim yang sedang tidak tenang hatinya , ditegur "Makanye Ngaji" agar tenang.
+date: Februari 2020
+tech:
+  - [
+      "JavaScript",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png",
+      "https://javascript.com",
+    ]
+  - [
+      "Svelte",
+      "https://avatars.githubusercontent.com/u/23617963?s=280&v=4",
+      "https://svelte.dev/",
+    ]
+  - [
+      "Sapper",
+      "data:image/png;base64,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",
+      "https://sapper.svelte.dev/",
+    ]
+  - [
+      "Tailwind",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjVpV4nl932g6G6kycjeR74Nl1y3shUAHsErscy01yo_kPnXbPZ3cXS_TGx4hq2t7F3a0&usqp=CAU",
+      "https://tailwindcss.com/",
+    ]
+---
+
+# Makanye Ngaji
+
+adalah platform qur'an digital yang dibuat dengan tujuan menyadarkan kaum muslim khususnya di Indonesia untuk membiasakan ngaji setiap hari. Dan juga kaum muslim yang sedang tidak tenang hatinya , ditegur "Makanye Ngaji" agar tenang.
+
+# API Quran
+
+[Link](https://api.quran.sutanlab.id/)
+
+[Github](http://github.com/sutanlab/quran-api/)
+
+# API Hadist
+
+untuk saat ini baru tersedia API hadist arbain, insya allah akan tersedia API hadist yang lain
+
+### get semua sub hadist arbain
+
+[Link](https://makanyengaji.vercel.app/hadist/arbain.json)
+
+### get per slug, contoh:
+
+[Link](http://makanyengaji.vercel.app/hadist/arbain/amalan-bergantung-pada-niat.json)
+
+## Ingin berkontribusi ?
+
+semua data ada di _\_posts.js_ masing masing folder, contohnya antum bisa menambahkan data hadist lain dengan menambahkan folder di _/src/routes/hadist_, lalu menambahkan pathnya di _/src/routes/\_hadist.js_,
+dan terakhir menambahkan navigasi di _/src/componentes/header.svelte_ pada variabel routes tepatnya.
+
+bingung ? coba baca dokumentasi [disini](https://sapper.svelte.dev/docs#File_naming_rules) untuk lebih mudah kontribusi nantinya.
+
+_Barakallahufiikum._

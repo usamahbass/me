@@ -28,16 +28,12 @@ const navLink = [
     path: "/coretan",
   },
   {
-    name: "OSS",
-    path: "/oss",
+    name: "Eksperimen",
+    path: "/eksperimen",
   },
   {
-    name: "Proyek",
-    path: "/proyek",
-  },
-  {
-    name: "Tentang Ane",
-    path: "/tentang-ane",
+    name: "Ane",
+    path: "/ane",
   },
 ];
 
@@ -92,7 +88,7 @@ export default function Topbar() {
                           <a
                             className="nav-link"
                             style={{
-                              color: colorMode === "dark" ? "#718096" : null,
+                              // color: colorMode === "dark" ? "#718096" : null,
                             }}
                           >
                             {nav.name}

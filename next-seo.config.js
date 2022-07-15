@@ -73,21 +73,21 @@ export const CoretanSEO = {
   },
 };
 
-export const OssSEO = {
-  title: "OSS | @usamahbass",
-  url: "https://usamahbass.vercel.app/oss",
-  description: `Berisi sekumpulan tools yang ane buat untuk mempermudah proses development.`,
+export const EksperimenSEO = {
+  title: "Eksperimen | @usamahbass",
+  url: "https://usamahbass.vercel.app/eksperimen",
+  description: `Berisi sekumpulan eksperimen yang dibuat ketika ide itu datang.`,
   openGraph: {
     type: "website",
     locale: "id",
-    url: "https://usamahbass.vercel.app/oss",
+    url: "https://usamahbass.vercel.app/eksperimen",
     site_name: "@usamahbass",
     images: [
       {
         url: "https://usamahbass.vercel.app/me.jpg",
         width: 800,
         height: 600,
-        alt: "Usamah Basalamah",
+        alt: "Eksperimen",
       },
     ],
   },
