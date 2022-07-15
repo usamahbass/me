@@ -24,7 +24,7 @@ export default function Hero() {
       </GridItem>
       <GridItem>
         <Text fontSize="1.3rem" fontWeight="bold" color="blue.500">
-          Ahlan
+          Ahlann
           <span className="emoji wave" role="img" aria-label="hand wave"></span>
         </Text>
         <Heading fontSize={{ base: "1.70rem", md: "3.5rem" }}>
