@@ -64,7 +64,7 @@ export default function Footer() {
             Github
           </Link>
         </Text>
-        <Text>Hak Cipta &copy; UsamahBass</Text>
+        <Text>UsamahBass - Bassdev</Text>
       </Box>
     </Box>
   );

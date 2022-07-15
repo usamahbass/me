@@ -28,16 +28,12 @@ const navLink = [
     path: "/coretan",
   },
   {
-    name: "OSS",
-    path: "/oss",
+    name: "Eksperimen",
+    path: "/eksperimen",
   },
   {
-    name: "Proyek",
-    path: "/proyek",
-  },
-  {
-    name: "Tentang Ane",
-    path: "/tentang-ane",
+    name: "Ane",
+    path: "/ane",
   },
 ];
 
@@ -92,7 +88,7 @@ export default function Topbar() {
                           <a
                             className="nav-link"
                             style={{
-                              color: colorMode === "dark" ? "#718096" : null,
+                              // color: colorMode === "dark" ? "#718096" : null,
                             }}
                           >
                             {nav.name}
@@ -136,18 +132,6 @@ export default function Topbar() {
               </ActiveLink>
             </ListItem>
           ))}
-          <ListItem>
-            <ChakraLink
-              className="nav-link"
-              href="https://makanyengaji.vercel.app"
-              style={{
-                textDecoration: 'none',
-                color: colorMode === "dark" ? "#718096" : null,
-              }}
-            >
-              Ngaji
-            </ChakraLink>
-          </ListItem>
           <Tooltip
             label={toggle ? "Terangin" : "Gelapin"}
             aria-label={toggle ? "Terangin" : "Gelapin"}

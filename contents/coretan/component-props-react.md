@@ -2,6 +2,7 @@
 title: Component dan Props di React
 slug: component-props-react
 date: 10 Januari 2021
+tags: [javascript]
 thumbnail: https://miro.medium.com/max/3600/1*HSisLuifMO6KbLfPOKtLow.jpeg
 edit: https://github.com/usamahbass/me/blob/develop/contents/coretan/component-props-react.md
 spoiler: Jika ente sudah pernah belajar JavaScript , ente pasti tau dengan fungsi dalam JavaScript. Secara konsep, komponen mirip dengan fungsi pada JavaScript. Komponen menerima beberapa masukan (props) dan mengembalikan element yang dideskripsikan .

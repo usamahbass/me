@@ -35,6 +35,7 @@ export default function IsOSS({ oss }) {
           <Image
             display="block"
             width="100%"
+            fallbackSrc="https://via.placeholder.com/653x406"
             height={["100%", "406px"]}
             src={oss.thumbnail}
             alt={oss.title}
@@ -94,7 +95,7 @@ export async function getStaticProps({ params }) {
   const matter = require("gray-matter");
 
   const slug = params.slug;
-  const path = `${process.cwd()}/contents/oss/${slug}.md`;
+  const path = `${process.cwd()}/contents/eksperimen/${slug}.md`;
 
   const rawContent = fs.readFileSync(path, {
     encoding: "utf-8",
@@ -121,7 +122,7 @@ export async function getStaticProps({ params }) {
 export async function getStaticPaths() {
   const fs = require("fs");
 
-  const path = `${process.cwd()}/contents/oss`;
+  const path = `${process.cwd()}/contents/eksperimen`;
   const files = fs.readdirSync(path, "utf-8");
 
   const markdownFileNames = files

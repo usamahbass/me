@@ -1,4 +1,5 @@
-@import "./components/highlight.css";
+@import "./components/_markdown.css";
+@import "./components/_highlight.css";
 @import "./components/_emoji.css";
 @import "./components/_zigzagdivider.css";
 @import "./utilities/_helper.css";

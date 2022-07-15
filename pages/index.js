@@ -4,7 +4,19 @@ import { Title, Hero, Card, Divider } from "../components";
 import { DefaultSEO } from "../next-seo.config";
 import Link from "next/link";
 
-export default function Home({ coretan, proyek, oss }) {
+export default function Home({ coretan, eksperimen }) {
+  const isCoretan = coretan.sort(
+    (a, b) =>
+      Math.abs(Date.now() - new Date(b.date)) -
+      Math.abs(Date.now() - new Date(a.date))
+  );
+
+  const isEksperimen = eksperimen.sort(
+    (a, b) =>
+      Math.abs(Date.now() - new Date(a.date)) -
+      Math.abs(Date.now() - new Date(b.date))
+  );
+
   return (
     <>
       <NextSeo {...DefaultSEO} />
@@ -14,27 +26,31 @@ export default function Home({ coretan, proyek, oss }) {
       {/* Coretan */}
 
       <Box display="flex" flexDirection="column" justifyContent="center">
-        <Title title="Coretan Terbaru" />
+        <Title title="Coretan" />
 
         <Grid
           gap="1.25rem"
           templateColumns="repeat(auto-fit, minmax(18rem, 1fr))"
         >
-          {coretan
-            ? coretan.reverse().slice(0, 3).map((el, i) => (
-                <GridItem key={i}>
-                  <Link href={`/coretan/${el.slug}`}>
-                    <a>
-                      <Card
-                        isNew
-                        title={el.title}
-                        date={el.date}
-                        desc={el.spoiler}
-                      />
-                    </a>
-                  </Link>
-                </GridItem>
-              ))
+          {isCoretan
+            ? isCoretan
+                .reverse()
+                .slice(0, 3)
+                .map((el, i) => (
+                  <GridItem key={i}>
+                    <Link href={`/coretan/${el.slug}`}>
+                      <a>
+                        <Card
+                          isNew
+                          tags={el.tags}
+                          title={el.title}
+                          date={el.date}
+                          desc={el.spoiler}
+                        />
+                      </a>
+                    </Link>
+                  </GridItem>
+                ))
             : "memuat data.."}
         </Grid>
 
@@ -60,7 +76,7 @@ export default function Home({ coretan, proyek, oss }) {
 
       {/* Proyek */}
 
-      <Box display="flex" flexDirection="column" justifyContent="center">
+      {/* <Box display="flex" flexDirection="column" justifyContent="center">
         <Title title="Proyek Terbaru" />
 
         <Grid
@@ -104,25 +120,25 @@ export default function Home({ coretan, proyek, oss }) {
             </Button>
           </a>
         </Link>
-      </Box>
+      </Box> */}
 
       {/* End Proyek */}
 
-      <Divider mb={10} mt={5} />
+      {/* <Divider mb={10} mt={5} /> */}
 
-      {/* OSS */}
+      {/* Eksperimen */}
 
       <Box display="flex" flexDirection="column" justifyContent="center">
-        <Title title="OSS Terbaru" />
+        <Title title="Eksperimen" />
 
         <Grid
           gap="1.25rem"
           templateColumns="repeat(auto-fit, minmax(18rem, 1fr))"
         >
-          {oss
-            ? oss.slice(0, 3).map((el, i) => (
+          {isEksperimen
+            ? isEksperimen.slice(0, 3).map((el, i) => (
                 <GridItem key={i}>
-                  <Link href={`/oss/${el.slug}`}>
+                  <Link href={`/eksperimen/${el.slug}`}>
                     <a>
                       <Card
                         isNew
@@ -142,7 +158,7 @@ export default function Home({ coretan, proyek, oss }) {
             : "memuat data.."}
         </Grid>
 
-        <Link href="/oss">
+        <Link href="/eksperimen">
           <a>
             <Button
               color="white"
@@ -173,11 +189,10 @@ export async function getStaticProps() {
     `${process.cwd()}/contents/coretan`,
     "utf-8"
   );
-  const filesProyek = fs.readdirSync(
-    `${process.cwd()}/contents/proyek`,
+  const filesEksperimen = fs.readdirSync(
+    `${process.cwd()}/contents/eksperimen`,
     "utf-8"
   );
-  const filesOSS = fs.readdirSync(`${process.cwd()}/contents/oss`, "utf-8");
 
   const coretan = filesCoretan
     .filter((fn) => fn.endsWith(".md"))
@@ -191,22 +206,10 @@ export async function getStaticProps() {
       return { ...data, id: uuid() };
     });
 
-  const proyek = filesProyek
+  const eksperimen = filesEksperimen
     .filter((fn) => fn.endsWith(".md"))
     .map((fn) => {
-      const path = `${process.cwd()}/contents/proyek/${fn}`;
-      const rawContent = fs.readFileSync(path, {
-        encoding: "utf-8",
-      });
-      const { data } = matter(rawContent);
-
-      return { ...data, id: uuid() };
-    });
-
-  const oss = filesOSS
-    .filter((fn) => fn.endsWith(".md"))
-    .map((fn) => {
-      const path = `${process.cwd()}/contents/oss/${fn}`;
+      const path = `${process.cwd()}/contents/eksperimen/${fn}`;
       const rawContent = fs.readFileSync(path, {
         encoding: "utf-8",
       });
@@ -218,8 +221,7 @@ export async function getStaticProps() {
   return {
     props: {
       coretan,
-      proyek,
-      oss,
+      eksperimen,
     },
   };
 }
