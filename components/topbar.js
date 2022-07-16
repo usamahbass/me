@@ -87,9 +87,11 @@ export default function Topbar() {
                         >
                           <a
                             className="nav-link"
-                            style={{
-                              // color: colorMode === "dark" ? "#718096" : null,
-                            }}
+                            style={
+                              {
+                                // color: colorMode === "dark" ? "#718096" : null,
+                              }
+                            }
                           >
                             {nav.name}
                           </a>
@@ -132,18 +134,7 @@ export default function Topbar() {
               </ActiveLink>
             </ListItem>
           ))}
-          <ListItem>
-            <ChakraLink
-              className="nav-link"
-              href="https://makanyengaji.vercel.app"
-              style={{
-                textDecoration: 'none',
-                color: colorMode === "dark" ? "#718096" : null,
-              }}
-            >
-              Ngaji
-            </ChakraLink>
-          </ListItem>
+
           <Tooltip
             label={toggle ? "Terangin" : "Gelapin"}
             aria-label={toggle ? "Terangin" : "Gelapin"}

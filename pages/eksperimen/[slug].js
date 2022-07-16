@@ -30,7 +30,7 @@ export default function IsOSS({ oss }) {
               url: oss.thumbnail,
               width: 800,
               height: 600,
-              alt: coretan.title,
+              alt: oss.title,
             },
           ],
         }}
