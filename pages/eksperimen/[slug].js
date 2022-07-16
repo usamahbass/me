@@ -19,13 +19,18 @@ export default function IsOSS({ oss }) {
         description={oss.spoiler}
         type="blog"
         openGraph={{
-          type: "blog",
+          type: "article",
+          locale: "id",
+          site_name: "@usamahbass",
           url: `https://usamahbass.vercel.app${path.path}`,
           title: oss.title,
           description: oss.spoiler,
           images: [
             {
               url: oss.thumbnail,
+              width: 800,
+              height: 600,
+              alt: coretan.title,
             },
           ],
         }}

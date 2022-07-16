@@ -19,13 +19,18 @@ export default function IsCoretan({ coretan }) {
         description={coretan.spoiler}
         type="blog"
         openGraph={{
-          type: "blog",
+          type: "article",
+          locale: "id",
+          site_name: "@usamahbass",
           url: `https://usamahbass.vercel.app${path.path}`,
           title: coretan.title,
           description: coretan.spoiler,
           images: [
             {
               url: coretan.thumbnail,
+              width: 800,
+              height: 600,
+              alt: coretan.title,
             },
           ],
         }}
@@ -59,11 +64,7 @@ export default function IsCoretan({ coretan }) {
               flexWrap="wrap"
             >
               <Edit style={{ marginRight: 5 }} />
-              <Link
-                href={coretan.edit}
-                position="relative"
-                top="3px"
-              >
+              <Link href={coretan.edit} position="relative" top="3px">
                 Ubah di Github
               </Link>
             </Box>
