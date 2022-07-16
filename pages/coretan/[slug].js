@@ -1,28 +1,34 @@
-import { useContext, useEffect } from "react";
 import { Box, Container, Heading, Link, Text } from "@chakra-ui/react";
 import { Calendar, Edit } from "react-feather";
+import { useRouter } from "next/router";
+import Head from "next/head";
 import { NextSeo } from "next-seo";
-import { IsContext } from "../../context";
 import { Markdown, Divider, Shared } from "../../components";
 
 export default function IsCoretan({ coretan }) {
-  const [path, setPath] = useContext(IsContext);
-
-  useEffect(() => {
-    setPath((path) => ({ ...path, path: window.location.pathname }));
-  }, []);
+  const {
+    query: { slug },
+  } = useRouter();
 
   return (
     <>
+      <Head>
+        <meta name="author" property="og:author" content="Usamah Basalamah" />
+        <meta
+          name="publish_date"
+          property="og:publish_date"
+          content={coretan?.date}
+        />
+      </Head>
       <NextSeo
         title={`${coretan.title} - @usamahbass`}
         description={coretan.spoiler}
-        type="blog"
+        type="article"
         openGraph={{
           type: "article",
           locale: "id",
           site_name: "@usamahbass",
-          url: `https://usamahbass.vercel.app${path.path}`,
+          url: `https://usamahbass.vercel.app/coretan/${slug}`,
           title: coretan.title,
           description: coretan.spoiler,
           images: [

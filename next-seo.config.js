@@ -1,7 +1,7 @@
 export const DefaultSEO = {
   title: "Usamah Basalamah | @usamahbass",
   url: "https://usamahbass.vercel.app/",
-  description: `An Frontend Developer yang berkulik di dunia per javascript pan dan per typescript pan.`,
+  description: `Ahlan 👋, Ane Usamah Basalamah. An Frontend Developer yang berkulik di dunia per javascript pan dan per typescript pan.`,
   openGraph: {
     type: "website",
     locale: "id",

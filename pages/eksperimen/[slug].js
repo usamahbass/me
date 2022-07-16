@@ -1,19 +1,26 @@
-import { useContext, useEffect } from "react";
 import { Box, Button, Divider, Heading, Image } from "@chakra-ui/react";
 import { NextSeo } from "next-seo";
 import { Code, Globe } from "react-feather";
+import { useRouter } from "next/router";
+import Head from "next/head";
 import { CardStack, Markdown } from "../../components";
-import { IsContext } from "../../context";
 import { OssContainer } from "../../containers";
 
 export default function IsOSS({ oss }) {
-  const [path, setPath] = useContext(IsContext);
+  const {
+    query: { slug },
+  } = useRouter();
 
-  useEffect(() => {
-    setPath((path) => ({ ...path, path: window.location.pathname }));
-  }, []);
   return (
     <>
+      <Head>
+        <meta name="author" property="og:author" content="Usamah Basalamah" />
+        <meta
+          name="publish_date"
+          property="og:publish_date"
+          content={oss?.date}
+        />
+      </Head>
       <NextSeo
         title={`${oss.title} - @usamahbass`}
         description={oss.spoiler}
@@ -22,7 +29,7 @@ export default function IsOSS({ oss }) {
           type: "article",
           locale: "id",
           site_name: "@usamahbass",
-          url: `https://usamahbass.vercel.app${path.path}`,
+          url: `https://usamahbass.vercel.app/eksperimen/${slug}`,
           title: oss.title,
           description: oss.spoiler,
           images: [
