@@ -20,6 +20,9 @@ import {
 import { useEffect, useState } from "react";
 import { Search, BarChart as SortIcon } from "react-feather";
 import { NextSeo } from "next-seo";
+import fs from "fs";
+import matter from "gray-matter";
+import { v4 as uuid } from "uuid";
 import { Title, Card } from "../../components";
 import { EksperimenSEO } from "../../next-seo.config";
 import Link from "next/link";
@@ -210,11 +213,6 @@ export default function Eksperimen({ eksperimen }) {
 }
 
 export async function getStaticProps() {
-  const fs = require("fs");
-  const matter = require("gray-matter");
-
-  const { v4: uuid } = require("uuid");
-
   const filesEksperimen = fs.readdirSync(
     `${process.cwd()}/contents/eksperimen`,
     "utf-8"

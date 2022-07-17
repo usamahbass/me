@@ -27,6 +27,9 @@ import {
 } from "react-feather";
 import { NextSeo } from "next-seo";
 import Link from "next/link";
+import fs from "fs";
+import matter from "gray-matter";
+import { v4 as uuid } from "uuid";
 import { CoretanSEO } from "../../next-seo.config";
 import { Title, Card } from "../../components";
 import { uniqueArray } from "../../utils/uniqueArray";
@@ -64,7 +67,7 @@ export default function Coretan({ coretan }) {
     coretan?.map((elem) =>
       elem.tags.map((tag) => {
         setAllTags((prevAllTags) => uniqueArray([...prevAllTags, tag]));
-        setFilterTags((prevAllTags) => uniqueArray([...prevAllTags, tag]))
+        setFilterTags((prevAllTags) => uniqueArray([...prevAllTags, tag]));
       })
     );
   }, []);
@@ -289,11 +292,6 @@ export default function Coretan({ coretan }) {
 }
 
 export async function getStaticProps() {
-  const fs = require("fs");
-  const matter = require("gray-matter");
-
-  const { v4: uuid } = require("uuid");
-
   const filesCoretan = fs.readdirSync(
     `${process.cwd()}/contents/coretan`,
     "utf-8"

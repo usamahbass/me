@@ -3,6 +3,8 @@ import { NextSeo } from "next-seo";
 import { Code, Globe } from "react-feather";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import fs from "fs";
+import matter from "gray-matter";
 import { CardStack, Markdown } from "../../components";
 import { OssContainer } from "../../containers";
 
@@ -99,13 +101,6 @@ export default function IsOSS({ oss }) {
 }
 
 export async function getStaticProps({ params }) {
-  const fs = require("fs");
-  const html = require("remark-html");
-  const highlight = require("remark-highlight.js");
-  const unified = require("unified");
-  const markdown = require("remark-parse");
-  const matter = require("gray-matter");
-
   const slug = params.slug;
   const path = `${process.cwd()}/contents/eksperimen/${slug}.md`;
 
@@ -115,25 +110,17 @@ export async function getStaticProps({ params }) {
 
   const { data, content } = matter(rawContent);
 
-  const result = await unified()
-    .use(markdown)
-    .use(highlight)
-    .use(html)
-    .process(content);
-
   return {
     props: {
       oss: {
         ...data,
-        content: result.toString(),
+        content: content.toString(),
       },
     },
   };
 }
 
 export async function getStaticPaths() {
-  const fs = require("fs");
-
   const path = `${process.cwd()}/contents/eksperimen`;
   const files = fs.readdirSync(path, "utf-8");
 

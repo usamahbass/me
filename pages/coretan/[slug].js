@@ -78,7 +78,7 @@ export default function IsCoretan({ coretan }) {
         </Box>
         <Divider mb={10} />
         <Markdown source={coretan.content} />
-        <Divider mb={10} />
+        <Divider mt={10} mb={10} />
         <Shared textTwitter={coretan.title} />
       </Container>
     </>
@@ -87,10 +87,6 @@ export default function IsCoretan({ coretan }) {
 
 export async function getStaticProps({ params }) {
   const fs = require("fs");
-  const html = require("remark-html");
-  const highlight = require("remark-highlight.js");
-  const unified = require("unified");
-  const markdown = require("remark-parse");
   const matter = require("gray-matter");
 
   const slug = params.slug;
@@ -102,17 +98,11 @@ export async function getStaticProps({ params }) {
 
   const { data, content } = matter(rawContent);
 
-  const result = await unified()
-    .use(markdown)
-    .use(highlight)
-    .use(html)
-    .process(content);
-
   return {
     props: {
       coretan: {
         ...data,
-        content: result.toString(),
+        content: content.toString(),
       },
     },
   };
