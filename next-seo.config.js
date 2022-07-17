@@ -1,7 +1,7 @@
 export const DefaultSEO = {
   title: "Usamah Basalamah | @usamahbass",
   url: "https://usamahbass.vercel.app/",
-  description: `Ahlan 👋 ! Ane Usamah Basalamah . Bikin RaksyeDev . Kadang suka React, kadang juga Svelte tapi buat ini pake Next.`,
+  description: `Ahlan 👋, Ane Usamah Basalamah. An Frontend Developer yang berkulik di dunia per javascript pan dan per typescript pan.`,
   openGraph: {
     type: "website",
     locale: "id",
@@ -9,7 +9,7 @@ export const DefaultSEO = {
     site_name: "@usamahbass",
     images: [
       {
-        url: "https://usamahbass.vercel.app/me.jpg",
+        url: "https://usamahbass.vercel.app/bass.jpeg",
         width: 800,
         height: 600,
         alt: "Usamah Basalamah",
@@ -25,16 +25,16 @@ export const DefaultSEO = {
 
 export const TentangSEO = {
   title: "Tentang Ane | @usamahbass",
-  url: "https://usamahbass.vercel.app/coretan",
-  description: `Ahlan 👋, ane Usamah Basalamah. Ane tinggal Indonesia, berusia 19 tahun ama suka membangun situs web maupun aplikasi dan berkontribusi pada proyek sumber terbuka apa pun yang ane suka.`,
+  url: "https://usamahbass.vercel.app/ane",
+  description: `Ahlan 👋, ane Usamah Basalamah. Ane tinggal Indonesia, berusia 20 tahun ama suka membangun situs web maupun aplikasi dan berkontribusi pada proyek sumber terbuka apa pun yang ane suka.`,
   openGraph: {
     type: "website",
     locale: "id",
-    url: "https://usamahbass.vercel.app/coretan",
+    url: "https://usamahbass.vercel.app/ane",
     site_name: "@usamahbass",
     images: [
       {
-        url: "https://usamahbass.vercel.app/me.jpg",
+        url: "https://usamahbass.vercel.app/bass.jpeg",
         width: 800,
         height: 600,
         alt: "Usamah Basalamah",
@@ -59,7 +59,7 @@ export const CoretanSEO = {
     site_name: "@usamahbass",
     images: [
       {
-        url: "https://usamahbass.vercel.app/me.jpg",
+        url: "https://usamahbass.vercel.app/bass.jpeg",
         width: 800,
         height: 600,
         alt: "Usamah Basalamah",
@@ -84,7 +84,7 @@ export const EksperimenSEO = {
     site_name: "@usamahbass",
     images: [
       {
-        url: "https://usamahbass.vercel.app/me.jpg",
+        url: "https://usamahbass.vercel.app/bass.jpeg",
         width: 800,
         height: 600,
         alt: "Eksperimen",
@@ -109,7 +109,7 @@ export const ProyekSEO = {
     site_name: "@usamahbass",
     images: [
       {
-        url: "https://usamahbass.vercel.app/me.jpg",
+        url: "https://usamahbass.vercel.app/bass.jpeg",
         width: 800,
         height: 600,
         alt: "Usamah Basalamah",

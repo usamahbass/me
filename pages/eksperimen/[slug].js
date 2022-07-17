@@ -1,31 +1,45 @@
-import { useContext, useEffect } from "react";
 import { Box, Button, Divider, Heading, Image } from "@chakra-ui/react";
 import { NextSeo } from "next-seo";
 import { Code, Globe } from "react-feather";
+import { useRouter } from "next/router";
+import Head from "next/head";
+import fs from "fs";
+import matter from "gray-matter";
 import { CardStack, Markdown } from "../../components";
-import { IsContext } from "../../context";
 import { OssContainer } from "../../containers";
 
 export default function IsOSS({ oss }) {
-  const [path, setPath] = useContext(IsContext);
+  const {
+    query: { slug },
+  } = useRouter();
 
-  useEffect(() => {
-    setPath((path) => ({ ...path, path: window.location.pathname }));
-  }, []);
   return (
     <>
+      <Head>
+        <meta name="author" property="og:author" content="Usamah Basalamah" />
+        <meta
+          name="publish_date"
+          property="og:publish_date"
+          content={oss?.date}
+        />
+      </Head>
       <NextSeo
         title={`${oss.title} - @usamahbass`}
         description={oss.spoiler}
         type="blog"
         openGraph={{
-          type: "blog",
-          url: `https://usamahbass.vercel.app${path.path}`,
+          type: "article",
+          locale: "id",
+          site_name: "@usamahbass",
+          url: `https://usamahbass.vercel.app/eksperimen/${slug}`,
           title: oss.title,
           description: oss.spoiler,
           images: [
             {
               url: oss.thumbnail,
+              width: 800,
+              height: 600,
+              alt: oss.title,
             },
           ],
         }}
@@ -87,13 +101,6 @@ export default function IsOSS({ oss }) {
 }
 
 export async function getStaticProps({ params }) {
-  const fs = require("fs");
-  const html = require("remark-html");
-  const highlight = require("remark-highlight.js");
-  const unified = require("unified");
-  const markdown = require("remark-parse");
-  const matter = require("gray-matter");
-
   const slug = params.slug;
   const path = `${process.cwd()}/contents/eksperimen/${slug}.md`;
 
@@ -103,25 +110,17 @@ export async function getStaticProps({ params }) {
 
   const { data, content } = matter(rawContent);
 
-  const result = await unified()
-    .use(markdown)
-    .use(highlight)
-    .use(html)
-    .process(content);
-
   return {
     props: {
       oss: {
         ...data,
-        content: result.toString(),
+        content: content.toString(),
       },
     },
   };
 }
 
 export async function getStaticPaths() {
-  const fs = require("fs");
-
   const path = `${process.cwd()}/contents/eksperimen`;
   const files = fs.readdirSync(path, "utf-8");
 

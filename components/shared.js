@@ -38,7 +38,7 @@ export default function Shared() {
         mb="5"
         size="md"
       >
-        Bagiin
+        Bagiin?
       </Heading>
 
       <Button

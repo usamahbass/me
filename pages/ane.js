@@ -14,13 +14,23 @@ export default function Tentang() {
         flexDirection="column"
         mb={15}
       >
-        <Title title="Tentang Ane" />
-        <Heading color={colorMode === "dark" ? "rgb(113, 128, 150)" : null} mt="5" size="md" fontWeight="100">
+        <Title title="Ane" />
+        <Heading
+          color={colorMode === "dark" ? "rgb(113, 128, 150)" : null}
+          mt="5"
+          size="md"
+          fontWeight="100"
+        >
           Ahlan &#128075;, ane Usamah Basalamah. Ane tinggal Indonesia, berusia
           20 tahun ane suka membangun situs web maupun aplikasi dan
           berkontribusi pada proyek sumber terbuka apa pun yang ane suka.
         </Heading>
-        <Heading color={colorMode === "dark" ? "rgb(113, 128, 150)" : null} mt="5" size="md" fontWeight="100">
+        <Heading
+          color={colorMode === "dark" ? "rgb(113, 128, 150)" : null}
+          mt="5"
+          size="md"
+          fontWeight="100"
+        >
           Ane terjun ke dunia programming pada awal tahun 2019, pada waktu itu
           ane belajar pemograman menggunakan HP dan bahasa yang ane gunakan
           adalah
@@ -82,7 +92,12 @@ export default function Tentang() {
           gak lama, karena bosan akhirnya ane memutuskan terjun ke dunia web
           development.
         </Heading>
-        <Heading color={colorMode === "dark" ? "rgb(113, 128, 150)" : null} mt="5" size="md" fontWeight="100">
+        <Heading
+          color={colorMode === "dark" ? "rgb(113, 128, 150)" : null}
+          mt="5"
+          size="md"
+          fontWeight="100"
+        >
           Nah, karena gak tau mau mulai dari mane akhirnya ane memutuskan untuk
           melakukan research &#x1F50D; terlebih dahulu. Search sana sini,
           akhirnya ane memutuskan untuk memulai dengan belajar
@@ -114,7 +129,12 @@ export default function Tentang() {
             MySQL.
           </Link>
         </Heading>
-        <Heading color={colorMode === "dark" ? "rgb(113, 128, 150)" : null} mt="5" size="md" fontWeight="100">
+        <Heading
+          color={colorMode === "dark" ? "rgb(113, 128, 150)" : null}
+          mt="5"
+          size="md"
+          fontWeight="100"
+        >
           Karena suka, ane tekuni dunia web development selama kurang lebih 1
           bulan. Pada bulan September 2019 , ane memutuskan untuk mondok di
           <Link
@@ -145,95 +165,6 @@ export default function Tentang() {
             JavaScript
           </Link>
           sebagai landasannye.
-        </Heading>
-        <Title title="Setup Ane" style={{ marginTop: "30px" }} />
-        <Heading color={colorMode === "dark" ? "rgb(113, 128, 150)" : null} mt="5" size="md" fontWeight="100">
-          Ane make Laptop Lenovo ideapad 330. Make OS Linux,
-          <Link
-            ml="1"
-            mr="1"
-            color="blue.500"
-            _hover={{
-              opacity: "0.8",
-              borderBottom: "2px solid",
-              transition: "all 0.15s ease-out",
-            }}
-            href="https://ubuntu.com/"
-          >
-            Ubuntu
-          </Link>
-          untuk lebih spesifik. Sebelumnye juga sempat lama di
-          <Link
-            ml="1"
-            mr="1"
-            color="blue.500"
-            _hover={{
-              opacity: "0.8",
-              borderBottom: "2px solid",
-              transition: "all 0.15s ease-out",
-            }}
-            href="https://lubuntu.net/"
-          >
-            Lubuntu
-          </Link>
-          lalu pindah ke
-          <Link
-            ml="1"
-            mr="1"
-            color="blue.500"
-            _hover={{
-              opacity: "0.8",
-              borderBottom: "2px solid",
-              transition: "all 0.15s ease-out",
-            }}
-            href="https://linuxmint.com/"
-          >
-            Linux Mint.
-          </Link>
-          Ngoding pake
-          <Link
-            ml="1"
-            mr="1"
-            color="blue.500"
-            _hover={{
-              opacity: "0.8",
-              borderBottom: "2px solid",
-              transition: "all 0.15s ease-out",
-            }}
-            href="https://code.visualstudio.com/"
-          >
-            VScode
-          </Link>
-          tapi pernah juga pake
-          <Link
-            ml="1"
-            mr="1"
-            color="blue.500"
-            _hover={{
-              opacity: "0.8",
-              borderBottom: "2px solid",
-              transition: "all 0.15s ease-out",
-            }}
-            href="https://atom.io/"
-          >
-            Atom.
-          </Link>
-          Sebelum ngoding ane kadang research &#x1F50D; untuk designnya, kalo
-          kagak ketemu ya kadang ane buat sendiri pake
-          <Link
-            ml="1"
-            mr="1"
-            color="blue.500"
-            _hover={{
-              opacity: "0.8",
-              borderBottom: "2px solid",
-              transition: "all 0.15s ease-out",
-            }}
-            href="https://figma.com/"
-          >
-            Figma
-          </Link>
-          ( kadang ya kalo lagi semangat buat designnya &#9786;).
         </Heading>
       </Box>
     </>

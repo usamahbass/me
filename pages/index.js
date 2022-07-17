@@ -1,5 +1,8 @@
 import { Box, Button, Grid, GridItem } from "@chakra-ui/react";
 import { NextSeo } from "next-seo";
+import fs from "fs";
+import matter from "gray-matter";
+import { v4 as uuid } from "uuid";
 import { Title, Hero, Card, Divider } from "../components";
 import { DefaultSEO } from "../next-seo.config";
 import Link from "next/link";
@@ -180,11 +183,6 @@ export default function Home({ coretan, eksperimen }) {
 }
 
 export async function getStaticProps() {
-  const fs = require("fs");
-  const matter = require("gray-matter");
-
-  const { v4: uuid } = require("uuid");
-
   const filesCoretan = fs.readdirSync(
     `${process.cwd()}/contents/coretan`,
     "utf-8"

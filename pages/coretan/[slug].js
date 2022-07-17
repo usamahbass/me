@@ -1,31 +1,42 @@
-import { useContext, useEffect } from "react";
 import { Box, Container, Heading, Link, Text } from "@chakra-ui/react";
 import { Calendar, Edit } from "react-feather";
+import { useRouter } from "next/router";
+import Head from "next/head";
 import { NextSeo } from "next-seo";
-import { IsContext } from "../../context";
 import { Markdown, Divider, Shared } from "../../components";
 
 export default function IsCoretan({ coretan }) {
-  const [path, setPath] = useContext(IsContext);
-
-  useEffect(() => {
-    setPath((path) => ({ ...path, path: window.location.pathname }));
-  }, []);
+  const {
+    query: { slug },
+  } = useRouter();
 
   return (
     <>
+      <Head>
+        <meta name="author" property="og:author" content="Usamah Basalamah" />
+        <meta
+          name="publish_date"
+          property="og:publish_date"
+          content={coretan?.date}
+        />
+      </Head>
       <NextSeo
         title={`${coretan.title} - @usamahbass`}
         description={coretan.spoiler}
-        type="blog"
+        type="article"
         openGraph={{
-          type: "blog",
-          url: `https://usamahbass.vercel.app${path.path}`,
+          type: "article",
+          locale: "id",
+          site_name: "@usamahbass",
+          url: `https://usamahbass.vercel.app/coretan/${slug}`,
           title: coretan.title,
           description: coretan.spoiler,
           images: [
             {
               url: coretan.thumbnail,
+              width: 800,
+              height: 600,
+              alt: coretan.title,
             },
           ],
         }}
@@ -59,11 +70,7 @@ export default function IsCoretan({ coretan }) {
               flexWrap="wrap"
             >
               <Edit style={{ marginRight: 5 }} />
-              <Link
-                href={coretan.edit}
-                position="relative"
-                top="3px"
-              >
+              <Link href={coretan.edit} position="relative" top="3px">
                 Ubah di Github
               </Link>
             </Box>
@@ -71,7 +78,7 @@ export default function IsCoretan({ coretan }) {
         </Box>
         <Divider mb={10} />
         <Markdown source={coretan.content} />
-        <Divider mb={10} />
+        <Divider mt={10} mb={10} />
         <Shared textTwitter={coretan.title} />
       </Container>
     </>
@@ -80,10 +87,6 @@ export default function IsCoretan({ coretan }) {
 
 export async function getStaticProps({ params }) {
   const fs = require("fs");
-  const html = require("remark-html");
-  const highlight = require("remark-highlight.js");
-  const unified = require("unified");
-  const markdown = require("remark-parse");
   const matter = require("gray-matter");
 
   const slug = params.slug;
@@ -95,17 +98,11 @@ export async function getStaticProps({ params }) {
 
   const { data, content } = matter(rawContent);
 
-  const result = await unified()
-    .use(markdown)
-    .use(highlight)
-    .use(html)
-    .process(content);
-
   return {
     props: {
       coretan: {
         ...data,
-        content: result.toString(),
+        content: content.toString(),
       },
     },
   };
