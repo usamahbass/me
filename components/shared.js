@@ -5,21 +5,23 @@ import {
   Heading,
   useClipboard,
   useColorMode,
-  color,
 } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 import { Facebook, Twitter, Linkedin, Copy, Check } from "react-feather";
 import { facebook, linkedin } from "./sharelink";
-import { IsContext } from "../context";
 
-export default function Shared() {
-  const [path] = useContext(IsContext);
-  const url = `https://usamahbass.vercel.app${path.path}`;
+export default function Shared({ path, title }) {
+  const {
+    query: { slug },
+  } = useRouter();
+
+  const url = `https://usamahbass.vercel.app/${path}/${slug}`;
 
   const { colorMode } = useColorMode();
 
   const { hasCopied, onCopy } = useClipboard(url);
   function shareTwitter() {
-    window.open(`http://twitter.com/share?text=${path.twitterName}&url=${url}`);
+    window.open(`http://twitter.com/share?text=${title}&url=${url}`);
   }
 
   function shareFacebook() {

@@ -12,7 +12,7 @@ export default function Tentang() {
         display="flex"
         justifyContent="center"
         flexDirection="column"
-        mb={15}
+        mb={20}
       >
         <Title title="Ane" />
         <Heading

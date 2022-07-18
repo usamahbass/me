@@ -2,7 +2,7 @@ import { Grid, useMediaQuery, GridItem } from "@chakra-ui/react";
 import { Shared } from "../components";
 import PropTypes from "prop-types";
 
-export default function OssContainer({ photo, content, stack }) {
+export default function OssContainer({ photo, content, stack, title }) {
   const [md] = useMediaQuery("(max-width: 880px)");
   return (
     <>
@@ -31,7 +31,7 @@ export default function OssContainer({ photo, content, stack }) {
           {stack}
         </GridItem>
       </Grid>
-      <Shared />
+      <Shared path="eksperimen" title={title} />
     </>
   );
 }
@@ -40,4 +40,5 @@ OssContainer.propTypes = {
   photo: PropTypes.node.isRequired,
   content: PropTypes.node.isRequired,
   stack: PropTypes.node.isRequired,
+  title: PropTypes.string.isRequired,
 };
