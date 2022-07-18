@@ -45,6 +45,7 @@ export default function IsOSS({ oss }) {
         }}
       />
       <OssContainer
+        title={oss.title}
         photo={
           <Image
             display="block"
