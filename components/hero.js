@@ -3,7 +3,7 @@ import { Avatar, Grid, GridItem, Heading, Link, Text } from "@chakra-ui/react";
 export default function Hero() {
   return (
     <Grid
-      templateColumns={["1fr", "20rem 1fr"]}
+      templateColumns={["1fr", "25rem 1fr"]}
       templateRows={["14rem 1fr", null]}
       textAlign={["center", "left"]}
       gap="1rem"
@@ -11,6 +11,7 @@ export default function Hero() {
       justifyContent="center"
       alignItems="center"
       marginBottom="50px"
+      marginTop="4rem"
     >
       <GridItem>
         <a href="https://github.com/usamahbass">
