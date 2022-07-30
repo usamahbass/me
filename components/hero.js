@@ -17,7 +17,7 @@ export default function Hero() {
           <Avatar
             width={256}
             height={256}
-            src="/bass.jpeg"
+            src="/bass.jpg"
             name="Usamah Basalamah"
           />
         </a>
