@@ -31,10 +31,10 @@ const navLink = [
     name: "Eksperimen",
     path: "/eksperimen",
   },
-  {
-    name: "Ane",
-    path: "/ane",
-  },
+  // {
+  //   name: "Tentang",
+  //   path: "/tentang",
+  // },
 ];
 
 export default function Topbar() {
