@@ -13,7 +13,7 @@ export default function Hero() {
       marginBottom="50px"
     >
       <GridItem>
-        <a href="https://github.com/usamahbass">
+        <a target="_blank" href="https://github.com/usamahbass">
           <Avatar
             width={256}
             height={256}
