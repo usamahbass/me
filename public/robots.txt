@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://usamahbass.vercel.app
+
+# Sitemaps
+Sitemap: https://usamahbass.vercel.app/sitemap.xml
