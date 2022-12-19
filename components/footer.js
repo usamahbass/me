@@ -64,7 +64,7 @@ export default function Footer() {
             Github
           </Link>
         </Text>
-        <Text>UsamahBass - Bassdev</Text>
+        <Text>UsamahBass - Bassdev • 2020</Text>
       </Box>
     </Box>
   );

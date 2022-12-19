@@ -1,4 +1,4 @@
-import { Box, Button, Divider, Heading, Image } from "@chakra-ui/react";
+import { Box, Button, Divider, Heading } from "@chakra-ui/react";
 import { NextSeo } from "next-seo";
 import { Code, Globe } from "react-feather";
 import { useRouter } from "next/router";
@@ -7,6 +7,7 @@ import fs from "fs";
 import matter from "gray-matter";
 import { CardStack, Markdown } from "../../components";
 import { OssContainer } from "../../containers";
+import Image from "../../components/image";
 
 export default function IsOSS({ oss }) {
   const {
@@ -47,13 +48,12 @@ export default function IsOSS({ oss }) {
       <OssContainer
         title={oss.title}
         photo={
-          <Image
-            display="block"
-            width="100%"
-            fallbackSrc="https://via.placeholder.com/653x406"
-            height={["100%", "406px"]}
+          <Box
+            width={["100%", "100%", "100%", "650px"]}
+            height={["200px", "200px", "200px", "406px"]}
             src={oss.thumbnail}
             alt={oss.title}
+            as={Image}
           />
         }
         stack={<CardStack stack={oss.tech} />}

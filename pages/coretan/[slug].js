@@ -108,14 +108,12 @@ export default function IsCoretan({ coretan, coretanExisting }) {
                 {coretanExisting?.map((el, i) => (
                   <GridItem key={i}>
                     <NextLink href={`/coretan/${el.slug}`}>
-                      <a>
-                        <Card
-                          tags={el.tags}
-                          title={el.title}
-                          date={el.date}
-                          desc={el.spoiler}
-                        />
-                      </a>
+                      <Card
+                        tags={el.tags}
+                        title={el.title}
+                        date={el.date}
+                        desc={el.spoiler}
+                      />
                     </NextLink>
                   </GridItem>
                 ))}

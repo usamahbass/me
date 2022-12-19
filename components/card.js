@@ -3,7 +3,6 @@ import {
   Badge,
   Divider,
   Text,
-  Image,
   ScaleFade,
   Heading,
   Avatar,
@@ -14,6 +13,7 @@ import {
 import { useEffect, useState } from "react";
 import { Calendar, Code, Globe } from "react-feather";
 import Proptypes from "prop-types";
+import Image from "./image";
 
 export const Card = ({
   title,

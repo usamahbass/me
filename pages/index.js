@@ -42,15 +42,13 @@ export default function Home({ coretan, eksperimen }) {
                 .map((el, i) => (
                   <GridItem key={i}>
                     <Link href={`/coretan/${el.slug}`}>
-                      <a>
-                        <Card
-                          isNew
-                          tags={el.tags}
-                          title={el.title}
-                          date={el.date}
-                          desc={el.spoiler}
-                        />
-                      </a>
+                      <Card
+                        isNew
+                        tags={el.tags}
+                        title={el.title}
+                        date={el.date}
+                        desc={el.spoiler}
+                      />
                     </Link>
                   </GridItem>
                 ))
@@ -58,76 +56,22 @@ export default function Home({ coretan, eksperimen }) {
         </Grid>
 
         <Link href="/coretan">
-          <a>
-            <Button
-              color="white"
-              size="md"
-              display="block"
-              margin="50px auto"
-              justifyContent="center"
-              bg="blue.500"
-            >
-              Lihat Selengkapnya
-            </Button>
-          </a>
+          <Button
+            color="white"
+            size="md"
+            display="block"
+            margin="50px auto"
+            justifyContent="center"
+            bg="blue.500"
+          >
+            Lihat Selengkapnya
+          </Button>
         </Link>
       </Box>
 
       {/* End Coretan */}
 
       <Divider mb={10} mt={5} />
-
-      {/* Proyek */}
-
-      {/* <Box display="flex" flexDirection="column" justifyContent="center">
-        <Title title="Proyek Terbaru" />
-
-        <Grid
-          gap="1.25rem"
-          templateColumns="repeat(auto-fit, minmax(18rem, 1fr))"
-        >
-          {proyek
-            ? proyek.slice(0, 3).map((el, i) => (
-                <GridItem key={i}>
-                  <Link href={`/proyek/${el.slug}`}>
-                    <a>
-                      <Card
-                        isNew
-                        isImage
-                        source_code={el.source_code}
-                        demo={el.demo}
-                        image={el.thumbnail}
-                        alt={el.title}
-                        title={el.title}
-                        date={el.date}
-                        desc={el.spoiler}
-                      />
-                    </a>
-                  </Link>
-                </GridItem>
-              ))
-            : "memuat data.."}
-        </Grid>
-
-        <Link href="/proyek">
-          <a>
-            <Button
-              color="white"
-              size="md"
-              display="block"
-              margin="50px auto"
-              justifyContent="center"
-              bg="blue.500"
-            >
-              Lihat Selengkapnya
-            </Button>
-          </a>
-        </Link>
-      </Box> */}
-
-      {/* End Proyek */}
-
-      {/* <Divider mb={10} mt={5} /> */}
 
       {/* Eksperimen */}
 
@@ -142,19 +86,17 @@ export default function Home({ coretan, eksperimen }) {
             ? isEksperimen.slice(0, 3).map((el, i) => (
                 <GridItem key={i}>
                   <Link href={`/eksperimen/${el.slug}`}>
-                    <a>
-                      <Card
-                        isNew
-                        isImage
-                        source_code={el.source_code}
-                        demo={el.demo}
-                        image={el.thumbnail}
-                        alt={el.title}
-                        title={el.title}
-                        date={el.date}
-                        desc={el.spoiler}
-                      />
-                    </a>
+                    <Card
+                      isNew
+                      isImage
+                      source_code={el.source_code}
+                      demo={el.demo}
+                      image={el.thumbnail}
+                      alt={el.title}
+                      title={el.title}
+                      date={el.date}
+                      desc={el.spoiler}
+                    />
                   </Link>
                 </GridItem>
               ))
@@ -162,18 +104,16 @@ export default function Home({ coretan, eksperimen }) {
         </Grid>
 
         <Link href="/eksperimen">
-          <a>
-            <Button
-              color="white"
-              size="md"
-              display="block"
-              margin="50px auto"
-              justifyContent="center"
-              bg="blue.500"
-            >
-              Lihat Selengkapnya
-            </Button>
-          </a>
+          <Button
+            color="white"
+            size="md"
+            display="block"
+            margin="50px auto"
+            justifyContent="center"
+            bg="blue.500"
+          >
+            Lihat Selengkapnya
+          </Button>
         </Link>
       </Box>
 

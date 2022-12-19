@@ -53,9 +53,9 @@ export default function Topbar() {
     <Box display="flex" justifyContent="space-between">
       <Box p="2">
         <Link href="/">
-          <a>
+          <span>
             <Heading size="md">UsamahBass</Heading>
-          </a>
+          </span>
         </Link>
       </Box>
 
@@ -85,7 +85,7 @@ export default function Topbar() {
                           activeClassName="nav-link-active"
                           href={nav.path}
                         >
-                          <a
+                          <span
                             className="nav-link"
                             style={
                               {
@@ -94,7 +94,7 @@ export default function Topbar() {
                             }
                           >
                             {nav.name}
-                          </a>
+                          </span>
                         </ActiveLink>
                       </ListItem>
                     ))}
@@ -123,14 +123,14 @@ export default function Topbar() {
           {navLink.map((nav, i) => (
             <ListItem key={i}>
               <ActiveLink activeClassName="nav-link-active" href={nav.path}>
-                <a
+                <span
                   className="nav-link"
                   style={{
                     color: colorMode === "dark" ? "#718096" : null,
                   }}
                 >
                   {nav.name}
-                </a>
+                </span>
               </ActiveLink>
             </ListItem>
           ))}

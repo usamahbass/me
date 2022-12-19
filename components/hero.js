@@ -17,7 +17,7 @@ export default function Hero() {
           <Avatar
             width={256}
             height={256}
-            src="/bass.jpg"
+            src="/bass-pantai.jpg"
             name="Usamah Basalamah"
           />
         </a>
@@ -42,7 +42,7 @@ export default function Hero() {
           >
             Frontend Developer,
           </Link>
-          20 tahun Indonesia.
+          21 tahun Indonesia.
         </Text>
 
         <Text fontSize={{ base: "1rem", md: "1.125rem" }} color="gray.500">

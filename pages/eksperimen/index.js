@@ -137,18 +137,16 @@ export default function Eksperimen({ eksperimen }) {
                 .map((el, i) => (
                   <GridItem key={i}>
                     <Link href={`/eksperimen/${el.slug}`}>
-                      <a>
-                        <Card
-                          isImage
-                          source_code={el.source_code}
-                          demo={el.demo}
-                          image={el.thumbnail}
-                          alt={el.title}
-                          title={el.title}
-                          date={el.date}
-                          desc={el.spoiler}
-                        />
-                      </a>
+                      <Card
+                        isImage
+                        source_code={el.source_code}
+                        demo={el.demo}
+                        image={el.thumbnail}
+                        alt={el.title}
+                        title={el.title}
+                        date={el.date}
+                        desc={el.spoiler}
+                      />
                     </Link>
                   </GridItem>
                 ))

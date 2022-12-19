@@ -1,6 +1,7 @@
 ---
 title: Basit Toast
 slug: basit-toast
+demo: https://github.com/raksyedev/basit-toast/
 source_code: https://github.com/raksyedev/basit-toast/
 thumbnail: https://images.unsplash.com/photo-1619095762086-66b82f914dcf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dG9hc3R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60
 spoiler: a basit (simple) toast like notification

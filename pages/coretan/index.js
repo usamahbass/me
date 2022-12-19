@@ -177,14 +177,12 @@ export default function Coretan({ coretan }) {
                 .map((el, i) => (
                   <GridItem key={i}>
                     <Link href={`/coretan/${el.slug}`}>
-                      <a>
-                        <Card
-                          tags={el.tags}
-                          title={el.title}
-                          date={el.date}
-                          desc={el.spoiler}
-                        />
-                      </a>
+                      <Card
+                        tags={el.tags}
+                        title={el.title}
+                        date={el.date}
+                        desc={el.spoiler}
+                      />
                     </Link>
                   </GridItem>
                 ))
