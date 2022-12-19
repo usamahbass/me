@@ -8,9 +8,6 @@
     "start": "next start",
     "sitemap": "next-sitemap --config next-sitemap.config.js"
   },
-  "engines": {
-    "node": "16.16.0"
-  },
   "dependencies": {
     "@chakra-ui/react": "^1.1.2",
     "@emotion/react": "^11.1.4",
