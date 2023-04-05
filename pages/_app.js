@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }) {
     <ContextProvider>
       <ChakraProvider theme={theme}>
         <Head>
-          <link rel="shortcut icon" href="/onoy.jpg" />
+          <link rel="shortcut icon" href="/me.jpg" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
             href="https://fonts.googleapis.com/css2?family=Overpass&display=swap"

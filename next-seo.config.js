@@ -9,7 +9,32 @@ export const DefaultSEO = {
     site_name: "@usamahbass",
     images: [
       {
-        url: "https://usamahbass.vercel.app/bass.jpeg",
+        url: "https://usamahbass.vercel.app/me.jpg",
+        width: 800,
+        height: 600,
+        alt: "Usamah Basalamah",
+      },
+    ],
+  },
+  twitter: {
+    handle: "@handle",
+    site: "@site",
+    cardType: "summary_large_image",
+  },
+};
+
+export const NgontenSEO = {
+  title: "Ngonten | @usamahbass",
+  url: "https://usamahbass.vercel.app/ngonten",
+  description: `Daftar konten konten yang tersebar di platform platformn internet`,
+  openGraph: {
+    type: "website",
+    locale: "id",
+    url: "https://usamahbass.vercel.app/ngonten",
+    site_name: "@usamahbass",
+    images: [
+      {
+        url: "https://usamahbass.vercel.app/me.jpg",
         width: 800,
         height: 600,
         alt: "Usamah Basalamah",
@@ -34,7 +59,7 @@ export const TentangSEO = {
     site_name: "@usamahbass",
     images: [
       {
-        url: "https://usamahbass.vercel.app/bass.jpeg",
+        url: "https://usamahbass.vercel.app/me.jpg",
         width: 800,
         height: 600,
         alt: "Usamah Basalamah",
@@ -59,7 +84,7 @@ export const CoretanSEO = {
     site_name: "@usamahbass",
     images: [
       {
-        url: "https://usamahbass.vercel.app/bass.jpeg",
+        url: "https://usamahbass.vercel.app/me.jpg",
         width: 800,
         height: 600,
         alt: "Usamah Basalamah",
@@ -84,7 +109,7 @@ export const EksperimenSEO = {
     site_name: "@usamahbass",
     images: [
       {
-        url: "https://usamahbass.vercel.app/bass.jpeg",
+        url: "https://usamahbass.vercel.app/me.jpg",
         width: 800,
         height: 600,
         alt: "Eksperimen",
@@ -109,7 +134,7 @@ export const ProyekSEO = {
     site_name: "@usamahbass",
     images: [
       {
-        url: "https://usamahbass.vercel.app/bass.jpeg",
+        url: "https://usamahbass.vercel.app/me.jpg",
         width: 800,
         height: 600,
         alt: "Usamah Basalamah",
