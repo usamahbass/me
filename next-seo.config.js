@@ -9,7 +9,7 @@ export const DefaultSEO = {
     site_name: "@usamahbass",
     images: [
       {
-        url: "https://usamahbass.vercel.app/me.jpg",
+        url: "https://usamahbass.vercel.app/me.jpeg",
         width: 800,
         height: 600,
         alt: "Usamah Basalamah",
@@ -34,7 +34,7 @@ export const NgontenSEO = {
     site_name: "@usamahbass",
     images: [
       {
-        url: "https://usamahbass.vercel.app/me.jpg",
+        url: "https://usamahbass.vercel.app/me.jpeg",
         width: 800,
         height: 600,
         alt: "Usamah Basalamah",
@@ -59,7 +59,7 @@ export const TentangSEO = {
     site_name: "@usamahbass",
     images: [
       {
-        url: "https://usamahbass.vercel.app/me.jpg",
+        url: "https://usamahbass.vercel.app/me.jpeg",
         width: 800,
         height: 600,
         alt: "Usamah Basalamah",
@@ -84,7 +84,7 @@ export const CoretanSEO = {
     site_name: "@usamahbass",
     images: [
       {
-        url: "https://usamahbass.vercel.app/me.jpg",
+        url: "https://usamahbass.vercel.app/me.jpeg",
         width: 800,
         height: 600,
         alt: "Usamah Basalamah",
@@ -109,7 +109,7 @@ export const EksperimenSEO = {
     site_name: "@usamahbass",
     images: [
       {
-        url: "https://usamahbass.vercel.app/me.jpg",
+        url: "https://usamahbass.vercel.app/me.jpeg",
         width: 800,
         height: 600,
         alt: "Eksperimen",
@@ -134,7 +134,7 @@ export const ProyekSEO = {
     site_name: "@usamahbass",
     images: [
       {
-        url: "https://usamahbass.vercel.app/me.jpg",
+        url: "https://usamahbass.vercel.app/me.jpeg",
         width: 800,
         height: 600,
         alt: "Usamah Basalamah",

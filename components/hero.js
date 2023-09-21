@@ -18,7 +18,7 @@ export default function Hero() {
             width={256}
             height={256}
             objectPosition="middle"
-            src="/me.jpg"
+            src="/me.jpeg"
             name="Usamah Basalamah"
           />
         </a>
