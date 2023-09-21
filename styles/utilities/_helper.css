@@ -1,11 +1,11 @@
 #nprogress .bar {
-  background: #3182ce !important;
+  background: #343aa4 !important;
   height: 5px;
 }
 
 #nprogress .spinner-icon {
-  border-top-color: #3182ce !important;
-  border-left-color: #3182ce !important;
+  border-top-color: #343aa4 !important;
+  border-left-color: #343aa4 !important;
 }
 
 .nav-link {
@@ -22,7 +22,7 @@
 }
 
 .nav-link-active {
-  color: #3182ce !important;
+  color: #343aa4 !important;
 }
 
 .font-me {

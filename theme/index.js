@@ -7,7 +7,9 @@ const theme = extendTheme({
     text: `'Overpass', sans-serif`,
   },
   colors: {
-    primary: {},
+    blue: {
+      500: "#343aa4",
+    },
   },
 });
 
