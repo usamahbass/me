@@ -8,9 +8,9 @@
       "sizes": "65x65"
     }
   ],
-  "background_color": "#FFFFFF",
-  "description": "Ahlan 👋 ! Ane Usamah Basalamah . Bikin RaksyeDev . Kadang suka React, kadang juga Svelte tapi buat ini pake Next.",
+  "background_color": "#09090b",
+  "description": "Usamah Basalamah — Frontend Engineer specializing in JavaScript, TypeScript, React, and modern UI systems.",
   "display": "standalone",
   "start_url": "/",
-  "theme_color": "#343aa4"
+  "theme_color": "#09090b"
 }
